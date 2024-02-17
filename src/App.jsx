@@ -1,5 +1,5 @@
 import ReactDOM from "react-dom/client";
-import { HashRouter , Routes, Route } from "react-router-dom";
+import { BrowserRouter , Routes, Route } from "react-router-dom";
 import HomePage from "./Pages/HomePage";
 import AboutusPage from "./Pages/AboutusPage";
 import NotFound from "./Pages/NotFound";
@@ -13,7 +13,7 @@ import Register from "./Pages/Register";
 export default function App() {
   return (
     <div id="__next" className="scroll-smooth " style={{ scrollBehavior:'smooth' }}>
-      <HashRouter>
+      <BrowserRouter>
         <TopHeader></TopHeader>
         <NavBar></NavBar>
         <Routes>
@@ -28,7 +28,7 @@ export default function App() {
           <Route path="/*" element={<NotFound></NotFound>}></Route>
         </Routes>
         <Footer></Footer>
-      </HashRouter>
+      </BrowserRouter>
     </div>
   );
 }

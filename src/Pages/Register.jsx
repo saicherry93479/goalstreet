@@ -71,12 +71,12 @@ const Register = () => {
         passOut: passOut,
       }; // Your request body here
     
-      const response = await fetch("https://goalstreet-backend.onrender.com/submit", {
+      const response = await fetch("https://goalstreetbackend.vercel.app/submit", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
           "Access-Control-Allow-Credentials":'true',
-          "Access-Control-Allow-Origin":"https://goalstreet-backend.onrender.com"
+          "Access-Control-Allow-Origin":"https://goalstreetbackend.vercel.app"
         },
         body: JSON.stringify(requestBody),
       });

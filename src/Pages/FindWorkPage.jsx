@@ -1,6 +1,41 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const FindWorkPage = () => {
+  const [data, setData] = useState([]);
+  const [error, setError] = useState(null);
+  const [searchTerm, setSearchTerm] = useState("");
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          "https://goalstreetbackend.vercel.app/frontendWorkData"
+        );
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        const jsonData = await response.json();
+        console.log(jsonData.data);
+        setData(jsonData.data);
+      } catch (error) {
+        setError(error);
+      }
+    };
+    fetchData();
+  }, []);
+
+  const filteredData = data.filter(item => {
+    // You can adjust this condition to match your search criteria
+    return (
+      item.jobName.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      item.companyName.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      item.jobDescription.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      item.domain.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      item.salaryRange.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      item.officeType.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      item.jobType.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+  });
   return (
     <div className="bg-white px-6  py-[50px]">
       <div className="container">
@@ -30,56 +65,34 @@ const FindWorkPage = () => {
                     className="flex h-10 w-full bg-transparent py-3 text-md ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-gray-400 focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50"
                     placeholder="Search role, skills, company name, etc."
                     defaultValue=""
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
                   />
                 </div>
-              </div>
-              <div className="flex flex-wrap items-center gap-2">
-                <div className="cursor-pointer select-none text-gray-800 whitespace-nowrap inline-flex gap-2 items-center rounded-full border font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent px-2 md:px-3 py-1 md:py-2 text-xs bg-gray-100">
-                  Internship
-                </div>
-                <div className="cursor-pointer select-none text-gray-800 whitespace-nowrap inline-flex gap-2 items-center rounded-full border font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent px-2 md:px-3 py-1 md:py-2 text-xs bg-gray-100">
-                  Freelance
-                </div>
-                <div className="cursor-pointer select-none text-gray-800 whitespace-nowrap inline-flex gap-2 items-center rounded-full border font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent px-2 md:px-3 py-1 md:py-2 text-xs bg-gray-100">
-                  Full-time
-                </div>
-                <div className="cursor-pointer select-none text-gray-800 whitespace-nowrap inline-flex gap-2 items-center rounded-full border font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent px-2 md:px-3 py-1 md:py-2 text-xs bg-gray-100">
-                  Remote
-                </div>
-                <div className="cursor-pointer select-none text-gray-800 whitespace-nowrap inline-flex gap-2 items-center rounded-full border font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent px-2 md:px-3 py-1 md:py-2 text-xs bg-gray-100">
-                  Paid
-                </div>
-                <div className="cursor-pointer select-none text-gray-800 whitespace-nowrap inline-flex gap-2 items-center rounded-full border font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent px-2 md:px-3 py-1 md:py-2 text-xs bg-gray-100">
-                  Equity
-                </div>
-                <div className="grow" />
               </div>
             </div>
             <div className="h-4 bg-gradient-to-b from-white to-transparent" />
           </div>
           <div className="flex min-w-0 items-start gap-6">
             <div className="grid w-full shrink-0 gap-4 w-full md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
-              {[0, 1, 2, 3, 4].map((d) => (
+              {filteredData?.map((d) => (
                 <div
                   className="flex min-h-[192px] w-full cursor-pointer flex-col rounded-lg border p-6 border-gray-100"
                   id="work_12982"
                 >
                   <div className="mb-4 flex items-center gap-2">
-                    <span className="relative flex shrink-0 overflow-hidden rounded-full h-5 w-5">
-                      <img
-                        className="aspect-square h-full w-full object-cover"
-                        src="https://lh3.googleusercontent.com/a/AEdFTp6LT7PWfod5RhsuRebijJ0G7xxcO5gVd4kkLCSn=s96-c"
-                      />
-                    </span>
-                    <p className="grow text-xs text-gray-500">Gajender Verma</p>
-                    <p className="text-xs text-gray-500">6 hours ago</p>
+                    <p className="text-xs  ml-auto text-gray-500">
+                      {d.postedDate.slice(0, 10)}
+                    </p>
                   </div>
                   <div className="flex grow gap-2">
                     <div className="grow space-y-1">
                       <p className="font-semibold line-clamp-2">
-                        React developer for saas company
+                        {d.jobName} for {d.companyName}
                       </p>
-                      <p className="text-xs text-gray-500">Gajender Verma</p>
+                      <p className="text-xs text-gray-500">
+                        {d.domain.toUpperCase()}
+                      </p>
                     </div>
                     <div className="h-16 w-16 shrink-0 overflow-hidden rounded-lg border border-gray-200">
                       <img
@@ -103,13 +116,13 @@ const FindWorkPage = () => {
                           fill="#42BE42"
                         />
                       </svg>
-                      ₹600000 - ₹700000/year
+                      ₹{d.salaryRange}/year
                     </div>
                     <div className="cursor-pointer inline-flex gap-0.5 items-center rounded-full px-2.5 py-0.5 text-2xs font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 truncate border border-gray-100 bg-white text-gray-800">
-                      Full-time
+                      {d.officeType.toLowerCase()}
                     </div>
                     <div className="cursor-pointer inline-flex gap-0.5 items-center rounded-full px-2.5 py-0.5 text-2xs font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 truncate border border-gray-100 bg-white text-gray-800">
-                      Remote
+                      {d.jobType.toLowerCase()}
                     </div>
                   </div>
                 </div>

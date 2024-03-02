@@ -9,6 +9,7 @@ import NavBar from "./Components/NavBar";
 import FindWorkPage from "./Pages/FindWorkPage";
 import IntershipPage from "./Pages/IntershipPage";
 import Register from "./Pages/Register";
+import ContactUsPage from "./Pages/ContactUsPage";
 
 export default function App() {
   return (
@@ -25,6 +26,7 @@ export default function App() {
           ></Route>
           <Route path="/internships" element={<IntershipPage></IntershipPage>}></Route>
           <Route path="/register" element={<Register></Register>}></Route>
+          <Route path="/contactus" element={<ContactUsPage></ContactUsPage>}></Route>
           <Route path="/*" element={<NotFound></NotFound>}></Route>
         </Routes>
         <Footer></Footer>

@@ -11,11 +11,12 @@ const Hero = () => {
             Sketch your ideas
           </h1>
           <h2 className="mx-auto max-w-6xl text-center text-2xl font-bold md:text-5xl lg:text-7xl mt-[20px]">
-            More than just a design bootcamp, course, or cohort
+            Goal
+            <p className="text-[#FC921B] inline "> Street</p>  Interships is not just a platform ;
           </h2>
           <p className="mt-3 text-center text-sm text-gray-500 md:text-xl lg:text-lg">
-            A premium club for individuals aspiring to become a skilled
-            developer
+            it's a collaborative ecosystem that envisions a future where
+            students and companies grow together
           </p>
           <a href="/internships">
             <button className="inline-flex hidden lg:inline-flex items-center whitespace-nowrap select-none justify-center font-medium gap-2 duration-200 ring-offset-background transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none rounded-lg disabled:opacity-50 disabled:grayscale border hover:border-0 border-[#25365e] bg-[#252362] hover:bg-opacity-60 dark:text-white text-sm md:text-md px-6 md:px-7 py-3 md:py-4 mt-4 mb-10 lg:mb-18 lg:mt-16 text-white">
@@ -34,7 +35,7 @@ const Hero = () => {
                 About Us
               </li>
             </a>
-            <a href="#contactus">
+            <a href="/contactus">
               <li className="cursor-pointer select-none whitespace-nowrap rounded-full p-3 font-semibold transition duration-300 ">
                 Contact Us
               </li>

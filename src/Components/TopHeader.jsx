@@ -5,7 +5,7 @@ const TopHeader = () => {
     <div className="sticky top-0 z-50 bg-[#FCD671] py-2 text-[#000105]">
       <div className="container flex items-center text-center text-xs md:text-sm">
         <p className="grow">
-          🚀 cohort is launching soon;
+          🚀 cohort is launching soon&nbsp;{/* */}&nbsp; &nbsp;
           <button
             type="button"
             className="bg-[#F2F0FF] hover:bg-[#F2F0FF70] inline-flex items-center whitespace-nowrap select-none justify-center font-medium gap-2 duration-200 ring-offset-background transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none rounded-lg disabled:opacity-50 disabled:grayscale bg-secondary border-gray-200 text-secondary-foreground hover:bg-secondary/30 text-xs px-3 md:px-4 py-1.5 md:py-2"

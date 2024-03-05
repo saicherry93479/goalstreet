@@ -20,7 +20,7 @@ const NavBar = () => {
               Find Work
             </li>
           </a>
-          <a href="/work">
+          <a href="/aboutus">
             <li className="cursor-pointer select-none whitespace-nowrap rounded-full p-3 font-semibold transition duration-300 hover:text-[#252362]">
               About Us
             </li>

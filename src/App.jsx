@@ -1,5 +1,5 @@
 import ReactDOM from "react-dom/client";
-import { BrowserRouter , Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "./Pages/HomePage";
 import AboutusPage from "./Pages/AboutusPage";
 import NotFound from "./Pages/NotFound";
@@ -13,7 +13,11 @@ import ContactUsPage from "./Pages/ContactUsPage";
 
 export default function App() {
   return (
-    <div id="__next" className="scroll-smooth " style={{ scrollBehavior:'smooth' }}>
+    <div
+      id="__next"
+      className="scroll-smooth !bg-white "
+      style={{ scrollBehavior: "smooth" }}
+    >
       <BrowserRouter>
         <TopHeader></TopHeader>
         <NavBar></NavBar>
@@ -24,11 +28,19 @@ export default function App() {
             path="/findwork"
             element={<FindWorkPage></FindWorkPage>}
           ></Route>
-          <Route path="/internships" element={<IntershipPage></IntershipPage>}></Route>
+          <Route
+            path="/contactus"
+            element={<ContactUsPage></ContactUsPage>}
+          ></Route>
+          <Route
+            path="/internships"
+            element={<IntershipPage></IntershipPage>}
+          ></Route>
           <Route path="/register" element={<Register></Register>}></Route>
-          <Route path="/contactus" element={<ContactUsPage></ContactUsPage>}></Route>
+          <Route path="/aboutus" element={<AboutusPage></AboutusPage>}></Route>
           <Route path="/*" element={<NotFound></NotFound>}></Route>
         </Routes>
+
         <Footer></Footer>
       </BrowserRouter>
     </div>

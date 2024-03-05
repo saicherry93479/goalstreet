@@ -116,7 +116,7 @@ const FindWorkPage = () => {
                           fill="#42BE42"
                         />
                       </svg>
-                      ₹{d.salaryRange}/year
+                      ₹{d.salaryRange}
                     </div>
                     <div className="cursor-pointer inline-flex gap-0.5 items-center rounded-full px-2.5 py-0.5 text-2xs font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 truncate border border-gray-100 bg-white text-gray-800">
                       {d.officeType.toLowerCase()}

@@ -94,9 +94,7 @@ const FindWorkPage = () => {
                         {d.domain.toUpperCase()}
                       </p>
                     </div>
-                    <div className="h-16 w-16 shrink-0 overflow-hidden rounded-lg border border-gray-200">
-                   
-                    </div>
+                 
                   </div>
                   <div className="flex gap-2">
                     <div className="cursor-pointer inline-flex items-center rounded-full px-2.5 py-0.5 text-2xs font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 gap-1 truncate border border-green-200 bg-green-50 text-gray-800">

@@ -23,9 +23,7 @@ const Courses = () => {
                 </div>
               </div>
               <h5 className=" lg:mb-2 lg:text-2xl">{d.courseName}</h5>
-              <div className="text-xs font-medium text-gray-400 lg:text-md">
-                Senior Designer at PharmEasy, ex-Flipkart, Sony, TOI
-              </div>
+
             </div>
           ))}
         </div>

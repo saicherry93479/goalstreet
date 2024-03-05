@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Modal from "../Components/Modal";
+import { COURSES_DATA } from "../Components/utils";
 
 const Register = () => {
   const [name, setName] = useState("");
@@ -60,6 +61,12 @@ const Register = () => {
       setError(true);
       return;
     }
+    if (domain === secondDomain) {
+      setModalText("Please select different domains !");
+      setShowModal(true);
+      setError(true);
+      return;
+    }
     try {
       const requestBody = {
         name: name,
@@ -70,13 +77,13 @@ const Register = () => {
         secondDomain: secondDomain,
         passOut: passOut,
       }; // Your request body here
-    
+
       const response = await fetch("https://goalstreetbackend.vercel.app/submit", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "Access-Control-Allow-Credentials":'true',
-          "Access-Control-Allow-Origin":"https://goalstreetbackend.vercel.app"
+          "Access-Control-Allow-Credentials": "true",
+          "Access-Control-Allow-Origin": "https://goalstreetbackend.vercel.app/",
         },
         body: JSON.stringify(requestBody),
       });
@@ -85,31 +92,27 @@ const Register = () => {
         throw new Error("Network response was not ok");
       }
       const responseData = await response.json();
-      console.log(await responseData.message)
-      if(!responseData.status){
+      console.log(await responseData.message);
+      if (!responseData.status) {
         setModalText(responseData.message);
-        setShowModal(true)
-        setError(true)
-        return
-
-      }else{
-        setModalText("Succesfull Registered!")
-        setShowModal(true)
-        setError(false)
-        setName('')
-        setEmail('')
-        setPhoneNumber('')
-        setPassOut('')
-        setSecondDomain('')
-        saetCollege('')
-        setDomain('')
-        return
-
+        setShowModal(true);
+        setError(true);
+        return;
+      } else {
+        setModalText("Succesfull Registered!");
+        setShowModal(true);
+        setError(false);
+        setName("");
+        setEmail("");
+        setPhoneNumber("");
+        setPassOut("");
+        setSecondDomain("");
+        saetCollege("");
+        setDomain("");
+        return;
       }
-
     } catch (err) {
       console.log("Error fetching data:", err);
-     
     }
   };
 
@@ -235,43 +238,53 @@ const Register = () => {
             />
             <p className="text-red-600 astro-QYQQ6LVS font-outfit" />
           </div>
-          <div className="flex flex-col group astro-QYQQ6LVS font-outfit">
+          <div class="flex flex-col gap-2 group">
             <label
-              id="dream-label"
-              className="mb-2 text-sm transition-colors group-focus-within:text-blue-700 astro-QYQQ6LVS font-outfit"
+              class="text-sm transition-colors group-focus-within:text-blue-700"
+              for="softSkills"
             >
-              Domain ( you are interested in )
+              Please Select a Domain ?
             </label>
-            <input
-              className="px-2 py-2 text-xl text-black transition-shadow bg-transparent group-focus-within:ring accent-blue-600  astro-QYQQ6LVS font-outfit"
-              name="domain"
-              id="dream"
-              placeholder="Google, Meta, Amazon, Microsoft..."
-              type="text"
-              required
+            <select
               value={domain}
-              onChange={(e) => setDomain(e.target.value)}
-            />
-            <p className="text-red-600 astro-QYQQ6LVS" />
-          </div>
-          <div className="flex flex-col group astro-QYQQ6LVS">
-            <label
-              id="language-label"
-              className="mb-2 text-sm transition-colors group-focus-within:text-blue-700 astro-QYQQ6LVS font-outfit"
+              name="domain"
+              id="softSkills"
+              onChange={(e) => {
+                setDomain(e.target.value);
+              }}
+              class="px-2 py-2 text-xl transition-shadow bg-transparent outline-none group-focus-within:ring accent-blue-600"
             >
-              Second Domain ( you are interested in for the cohort )
+              <option>select an option</option>
+              {COURSES_DATA.map((d) => (
+                <option className="text-black" value={d.courseName}>
+                  {d.courseName}
+                </option>
+              ))}
+            </select>
+          </div>
+          <div class="flex flex-col gap-2 group">
+            <label
+              class="text-sm transition-colors group-focus-within:text-blue-700"
+              for="softSkills"
+            >
+              Please Select a Another Domain ?
             </label>
-            <input
-              className="px-2 py-2 text-xl text-black transition-shadow bg-transparent group-focus-within:ring accent-blue-600  astro-QYQQ6LVS font-outfit"
+            <select
+              value={secondDomain}
+              onChange={(e) => {
+                setSecondDomain(e.target.value);
+              }}
               name="secondDomain"
               id="language"
-              placeholder="C, C++, Java, Python, JavaScript..."
-              type="text"
-              required
-              value={secondDomain}
-              onChange={(e) => setSecondDomain(e.target.value)}
-            />
-            <p className="text-red-600 astro-QYQQ6LVS" />
+              class="px-2 py-2 text-xl transition-shadow bg-transparent outline-none group-focus-within:ring accent-blue-600"
+            >
+              <option>select an option</option>
+              {COURSES_DATA.map((d) => (
+                <option className="text-black" value={d.courseName}>
+                  {d.courseName}
+                </option>
+              ))}
+            </select>
           </div>
 
           <button
@@ -288,33 +301,3 @@ const Register = () => {
 
 export default Register;
 
-const colleges = [
-  "AITS Tirupati",
-  "AITS Kadapa",
-  "Diet",
-  "VMTW",
-  "GNITS",
-  "MIET",
-  "KLU",
-  "SNIST",
-  "Sitam",
-  "SRKR",
-  "KG Reddy",
-  "SVCET",
-  "KLH",
-  "VIIT",
-  "MVGR",
-  "RISHI",
-  "VIEW",
-  "Raghu",
-  "CMRTC",
-  "BRECW",
-  "Other",
-];
-const RATINGS = [
-  "Poor-Limited or no understanding of the basics of programming.",
-  "Average-Theoretical knowledge about coding, but limited practical experience.",
-  "Good-Solid understanding of coding, up to the level of data structures.",
-  "Very Good-Strong grasp of data structures and algorithms, but in need of more practice.",
-  "Excellent-Successfully tackled challenges and possess significant expertise in data structures and algorithms.",
-];

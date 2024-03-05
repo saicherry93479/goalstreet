@@ -81,8 +81,8 @@ const FindWorkPage = () => {
                   id="work_12982"
                 >
                   <div className="mb-4 flex items-center gap-2">
-                    <p className="text-xs  ml-auto text-gray-500">
-                      {d.postedDate.slice(0, 10)}
+                    <p className="text-xs   text-gray-500">
+                     posted on : {d.postedDate.slice(0, 10)}
                     </p>
                   </div>
                   <div className="flex grow gap-2">
@@ -95,11 +95,7 @@ const FindWorkPage = () => {
                       </p>
                     </div>
                     <div className="h-16 w-16 shrink-0 overflow-hidden rounded-lg border border-gray-200">
-                      <img
-                        className="w-full object-cover"
-                        src="https://files.bluelearn.in/COMPANIES/Kaliper/2023-10-27T05%3A20%3A22%2B00%3A00-Kaliper.ico"
-                        alt=""
-                      />
+                   
                     </div>
                   </div>
                   <div className="flex gap-2">

@@ -22,9 +22,7 @@ const IntershipPage = () => {
                 </div>
               </div>
               <h5 className="text-gray-100 lg:mb-2 lg:text-2xl !text-black">{d.courseName}</h5>
-              <div className="text-xs font-medium text-gray-400 lg:text-md">
-                Senior Designer at PharmEasy, ex-Flipkart, Sony, TOI
-              </div>
+             
             </div>
           ))}
         </div>

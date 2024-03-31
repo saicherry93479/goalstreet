@@ -4,7 +4,7 @@ import LadderOne from "../assets/LadderOne.jsx";
 
 const Youtube = () => {
   return (
-    <section className="select-none mt-[50px] md:mt-0 bg-gradient-to-b from-transparent via-[#101114] to-transparent py-18 md:py-36 text-white bg-[#101114]">
+    <section className="select-none  md:mt-0 bg-gradient-to-b from-transparent via-[#101114] to-transparent py-18 md:py-36 text-white bg-[#101114]">
       <div className="container relative flex cursor-default flex-col items-center justify-start gap-16 py-4 md:flex-row md:justify-between md:gap-12 md:py-8">
         <div>
           <h2 className="mb-4 text-2xl font-bold lg:mb-7 lg:text-6xl">

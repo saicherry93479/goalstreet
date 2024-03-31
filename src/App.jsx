@@ -10,6 +10,8 @@ import FindWorkPage from "./Pages/FindWorkPage";
 import IntershipPage from "./Pages/IntershipPage";
 import Register from "./Pages/Register";
 import ContactUsPage from "./Pages/ContactUsPage";
+import RegisterSample from "./Components/RegisterSample";
+import HRRegister from "./Pages/HRRegister";
 
 export default function App() {
   return (
@@ -36,8 +38,16 @@ export default function App() {
             path="/internships"
             element={<IntershipPage></IntershipPage>}
           ></Route>
-          <Route path="/register" element={<Register></Register>}></Route>
+          <Route
+            path="/register"
+            element={<Register></Register>}
+          ></Route>
           <Route path="/aboutus" element={<AboutusPage></AboutusPage>}></Route>
+          <Route
+            path="/hrForm"
+            element={<HRRegister></HRRegister>}
+          ></Route>
+
           <Route path="/*" element={<NotFound></NotFound>}></Route>
         </Routes>
 

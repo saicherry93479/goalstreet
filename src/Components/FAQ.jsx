@@ -8,7 +8,7 @@ const answer =
 
 const FAQ = () => {
   return (
-    <section className="bg-gradient-to-b mt-[50px] text-white from-transparent via-[#101114] to-transparent py-20 md:py-24 text-black">
+    <section className="bg-gradient-to-b  md:mt-[50px] text-white from-transparent via-[#101114] to-transparent py-12 md:py-20 md:py-24 text-black">
       <div className="container">
         <h2 className="mb-10 text-center text-black text-2xl md:text-6xl lg:mb-20">
           Frequently Asked Questions

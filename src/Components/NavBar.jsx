@@ -9,7 +9,7 @@ const NavBar = () => {
         {/* <Logo></Logo> */}
 
         <a href="/">
-          <img className="lg:scale-400" src={LOGOGOAL}></img>
+          <img className=" w-[150px] md:w-[200px]"  src={LOGOGOAL}></img>
         </a>
         <ul
           className="hidden items-center gap-1 rounded-full px-4 lg:flex  hover:bg-opacity-80 backdrop-blur text-white bg-[#FC921B]"
@@ -36,7 +36,7 @@ const NavBar = () => {
           <a href="/register">
             <button
               type="button"
-              class="inline-flex items-center whitespace-nowrap select-none justify-center font-medium gap-2 duration-200 ring-offset-background transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none rounded-lg disabled:opacity-50 disabled:grayscale  text-white text-primary-foreground hover:bg-opacity-60 text-sm md:text-md px-6 md:px-7 py-3 md:py-4 bg-[#252362]"
+              class="inline-flex items-center whitespace-nowrap select-none justify-center font-medium gap-2 duration-200 ring-offset-background transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none rounded-lg disabled:opacity-50 disabled:grayscale  text-white text-primary-foreground hover:bg-opacity-60 text-sm md:text-md px-2 md:px-7 py-2 md:py-4 bg-[#252362]"
             >
               Join Now
             </button>

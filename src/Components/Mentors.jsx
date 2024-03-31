@@ -5,14 +5,14 @@ const Mentors = () => {
   return (
     <section
       id="mentors"
-      className="select-none bg-gradient-to-b from-transparent via-[#101114] to-transparent py-18 md:py-24 py-[100px]"
+      className="select-none bg-gradient-to-b from-transparent via-[#101114] to-transparent py-18 md:py-24 py-[100px] bg-[#FC921B]"
     >
-      <div className="relative h-full w-full">
-        <h2 className="container mx-auto mb-[60px] max-w-6xl text-center text-xl font-bold md:text-5xl lg:text-7xl text-black">
+      <div className="relative h-[40vh] md:h-[50vh] w-full flex justify-center items-center">
+        <h2 className="container mx-auto mb-[60px] max-w-6xl text-center text-[25px] font-bold md:text-5xl lg:text-7xl text-white">
           Connect with senior engineering mentors and get actionable insights
         </h2>
-        <div className="container flex gap-2 overflow-x-auto  md:grid md:grid-cols-3 lg:gap-0 lg:gap-y-20 xl:grid-cols-4 !xl:gap-x-0 px-[100px] lg:px-[100px] xl:px-[180px]">
-          {[0, 1, 2, 3, 4, 5, 6].map((d) => (
+        {/* <div className="container hidden flex gap-2 overflow-x-auto  md:grid md:grid-cols-3 lg:gap-0 lg:gap-y-20 xl:grid-cols-4 !xl:gap-x-0 px-[100px] lg:px-[100px] xl:px-[180px]">
+          {[1].map((d) => (
             <div className="min-w-[200px] lg:min-w-[300px] max-w-xs text-center">
               <div className="relative mx-auto mb-5 w-fit">
                 <div className="aspect-[8/9] overflow-hidden rounded-3xl object-cover">
@@ -32,7 +32,7 @@ const Mentors = () => {
               </div>
             </div>
           ))}
-        </div>
+        </div> */}
       </div>
     </section>
   );

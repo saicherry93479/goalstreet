@@ -3,7 +3,7 @@ import { Data } from "./utils";
 
 const PricePlan = () => {
   return (
-    <section className="select-none my-12 mt-24 text-white  bg-gradient-to-b from-transparent via-[#101114] to-transparent bg-[#101114] py-[50px]">
+    <section className="select-none my-12 mt-0 md:mt-24  text-white  bg-gradient-to-b from-transparent via-[#101114] to-transparent bg-[#101114] py-[50px]">
       <div className="container relative h-full w-full py-18 lg:py-24">
         <h2 className="mx-auto mb-[60px] max-w-6xl text-center text-xl font-bold md:text-5xl lg:text-7xl">
           Plan your design learning journey

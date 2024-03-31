@@ -78,15 +78,19 @@ const Register = () => {
         passOut: passOut,
       }; // Your request body here
 
-      const response = await fetch("https://goalstreetbackend.vercel.app/submit", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Access-Control-Allow-Credentials": "true",
-          "Access-Control-Allow-Origin": "https://goalstreetbackend.vercel.app/",
-        },
-        body: JSON.stringify(requestBody),
-      });
+      const response = await fetch(
+        "https://goalstreetbackend.vercel.app/submit",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Credentials": "true",
+            "Access-Control-Allow-Origin":
+              "https://goalstreetbackend.vercel.app/",
+          },
+          body: JSON.stringify(requestBody),
+        }
+      );
       console.log("response from server ", response);
       if (!response.ok) {
         throw new Error("Network response was not ok");
@@ -117,7 +121,7 @@ const Register = () => {
   };
 
   return (
-    <div className="bg-white font-outfit py-[20px] md:py-[50px]">
+    <div className="bg-white font-outfit  ">
       {showModal ? (
         <Modal
           setShowModal={setShowModal}
@@ -126,173 +130,182 @@ const Register = () => {
         ></Modal>
       ) : null}
       <main>
-        <div className="max-w-xl px-4 mx-auto mt-6 space-y-4" id="registerForm">
-          <blockquote>
-            <p className="px-6 py-2 border-l-4 border-indigo-800 bg-indigo-400/10 font-outfit">
-              willing to start Placement Cracker in your college?
-              <a
-                className="text-blue-700 cursor-pointer font-outfit"
-                href="https://docs.google.com/forms/d/e/1FAIpQLSdBv-f5FjKnTuYOEkO1yHfKZsE7SFFssdtW2ZBhs6tIQs-grQ/viewform?usp=sf_link"
-                target="_blank"
-              >
-                Join Us
-              </a>
-            </p>
-          </blockquote>
-          <h1 className="text-2xl font-bold text-gray-800 x-4 font-outfit">
-            Register
-          </h1>
-          <div className="flex flex-col group astro-QYQQ6LVS font-outfit">
-            <label
-              id="name-label"
-              className="mb-2 text-sm transition-colors group-focus-within:text-blue-700 astro-QYQQ6LVS font-outfit"
-            >
-              Full Name
-            </label>
-            <input
-              className="px-2 py-2 text-xl text-black transition-shadow bg-transparent group-focus-within:ring accent-blue-600  astro-QYQQ6LVS font-outfit"
-              name="name"
-              id="name"
-              placeholder="Sai Charan"
-              required
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-            />
-            <p className="text-red-600 astro-QYQQ6LVS font-outfit" />
-          </div>
-          <div className="flex flex-col group astro-QYQQ6LVS font-outfit">
-            <label
-              id="phone-label"
-              className="mb-2 text-sm transition-colors group-focus-within:text-blue-700 font-outfit astro-QYQQ6LVS"
-            >
-              Mobile
-            </label>
-            <input
-              className="px-2 py-2 text-black text-xl transition-shadow bg-transparent group-focus-within:ring font-outfit accent-blue-600  astro-QYQQ6LVS"
-              name="phoneNumber"
-              id="phone"
-              placeholder={9878787123}
-              type="tel"
-              required
-              value={phoneNumber}
-              onChange={(e) => setPhoneNumber(e.target.value)}
-            />
-            <p className="text-red-600 font-outfit astro-QYQQ6LVS" />
-          </div>
-          <div className="flex flex-col group font-outfit astro-QYQQ6LVS">
-            <label
-              id="email-label"
-              className="mb-2 font-outfit text-sm transition-colors group-focus-within:text-blue-700 astro-QYQQ6LVS"
-            >
-              Your college Email
-            </label>
-            <input
-              className="px-2 py-2 font-outfit text-black text-xl transition-shadow bg-transparent group-focus-within:ring accent-blue-600  astro-QYQQ6LVS"
-              name="email"
-              id="email"
-              placeholder="20311A05M7@sreenidhi.edu.in"
-              type="email"
-              required
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            <p className="text-red-600  font-outfit astro-QYQQ6LVS" />
-          </div>
+        <div className="min-h-[80vh] px-0 bg-gray-100  flex justify-center sm:py-12 ">
+          <div className="relative py-3 w-screen sm:w-[100%]  md:w-[600px]  lg:w-[40%] xl:w-[30%]">
+            <div className="relative bg-blue-500   px-4 md:px-8 py-10 bg-white mx-4 md:mx-8 md:mx-0  shadow rounded-3xl sm:p-10">
+              <div className="text-base leading-6 space-y-4  text-gray-700 md:text-lg sm:leading-7">
+                <div className="flex items-center space-x-5 ">
+                  <div className="h-14 w-14 bg-yellow-200 rounded-full flex flex-shrink-0 justify-center items-center text-yellow-500 text-2xl font-mono">
+                    i
+                  </div>
+                  <div className="block pl-2 font-semibold text-xl self-start text-gray-700">
+                    <h2 className="leading-relaxed">Register</h2>
+                  </div>
+                </div>
+                <div className="flex flex-col group astro-QYQQ6LVS font-outfit">
+                  <label
+                    id="name-label"
+                    className="mb-2 text-sm transition-colors group-focus-within:text-blue-700 astro-QYQQ6LVS font-outfit"
+                  >
+                    Full Name
+                  </label>
+                  <input
+                    className="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
+                    name="name"
+                    id="name"
+                    placeholder="Sai Charan"
+                    required
+                    value={name}
+                    onChange={(e) => setName(e.target.value)
 
-          <div className="flex flex-col group astro-QYQQ6LVS font-outfit">
-            <label
-              id="otherCollegeName-label"
-              className="mb-2 text-sm transition-colors group-focus-within:text-blue-700 astro-QYQQ6LVS font-outfit"
-            >
-              Your college Name
-            </label>
-            <input
-              className="px-2 py-2 text-xl text-black transition-shadow bg-transparent group-focus-within:ring accent-blue-600  astro-QYQQ6LVS font-outfit"
-              name="college"
-              id="college"
-              placeholder="NIT Trichy"
-              type="text"
-              required
-              value={college}
-              onChange={(e) => saetCollege(e.target.value)}
-            />
-            <p className="text-red-600 astro-QYQQ6LVS" />
-          </div>
+                    }
+                    maxLength={25}
+                  />
+                  <p className="text-red-600 astro-QYQQ6LVS font-outfit" />
+                </div>
+                <div className="flex flex-col group astro-QYQQ6LVS font-outfit">
+                  <label
+                    id="phone-label"
+                    className="mb-2 text-sm transition-colors group-focus-within:text-blue-700 font-outfit astro-QYQQ6LVS"
+                  >
+                    Mobile
+                  </label>
+                  <input
+                    className="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
+                    name="phoneNumber"
+                    id="phone"
+                    maxLength={10}
+                    placeholder={9878787123}
+                  
+          
+                    type="tel"
 
-          <div className="flex flex-col group astro-QYQQ6LVS font-outfit">
-            <label
-              id="passOutYear-label"
-              className="mb-2 text-sm transition-colors group-focus-within:text-blue-700 astro-QYQQ6LVS font-outfit"
-            >
-              Passing out year
-            </label>
-            <input
-              className="px-2 py-2 text-xl text-black transition-shadow bg-transparent group-focus-within:ring accent-blue-600  astro-QYQQ6LVS font-outfit"
-              name="passOut"
-              id="passOutYear"
-              placeholder={2024}
-              type="number"
-              required
-              value={passOut}
-              onChange={(e) => setPassOut(e.target.value)}
-            />
-            <p className="text-red-600 astro-QYQQ6LVS font-outfit" />
-          </div>
-          <div class="flex flex-col gap-2 group">
-            <label
-              class="text-sm transition-colors group-focus-within:text-blue-700"
-              for="softSkills"
-            >
-              Please Select a Domain ?
-            </label>
-            <select
-              value={domain}
-              name="domain"
-              id="softSkills"
-              onChange={(e) => {
-                setDomain(e.target.value);
-              }}
-              class="px-2 py-2 text-xl transition-shadow bg-transparent outline-none group-focus-within:ring accent-blue-600"
-            >
-              <option>select an option</option>
-              {COURSES_DATA.map((d) => (
-                <option className="text-black" value={d.courseName}>
-                  {d.courseName}
-                </option>
-              ))}
-            </select>
-          </div>
-          <div class="flex flex-col gap-2 group">
-            <label
-              class="text-sm transition-colors group-focus-within:text-blue-700"
-              for="softSkills"
-            >
-              Please Select a Another Domain ?
-            </label>
-            <select
-              value={secondDomain}
-              onChange={(e) => {
-                setSecondDomain(e.target.value);
-              }}
-              name="secondDomain"
-              id="language"
-              class="px-2 py-2 text-xl transition-shadow bg-transparent outline-none group-focus-within:ring accent-blue-600"
-            >
-              <option>select an option</option>
-              {COURSES_DATA.map((d) => (
-                <option className="text-black" value={d.courseName}>
-                  {d.courseName}
-                </option>
-              ))}
-            </select>
-          </div>
+                    required
+                    value={phoneNumber}
+                    onChange={(e) => setPhoneNumber(e.target.value)}
+                  />
+                  <p className="text-red-600 font-outfit astro-QYQQ6LVS" />
+                </div>
+                <div className="flex flex-col group font-outfit astro-QYQQ6LVS">
+                  <label
+                    id="email-label"
+                    className="mb-2 font-outfit text-sm transition-colors group-focus-within:text-blue-700 astro-QYQQ6LVS"
+                  >
+                    Your college Email
+                  </label>
+                  <input
+                    className="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
+                    name="email"
+                    id="email"
+                    placeholder="20311A05M7@sreenidhi.edu.in"
+                    type="email"
+                    required
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
+                  <p className="text-red-600  font-outfit astro-QYQQ6LVS" />
+                </div>
 
-          <button
-            onClick={onSubmitHandler}
-            className="block cursor-pointer mx-auto text-white btn font-outfit p-3 px-6 rounded-md bg-[#252362]"
-          >
-            Submit
-          </button>
+                <div className="flex flex-col group astro-QYQQ6LVS font-outfit">
+                  <label
+                    id="otherCollegeName-label"
+                    className="mb-2 text-sm transition-colors group-focus-within:text-blue-700 astro-QYQQ6LVS font-outfit"
+                  >
+                    Your college Name
+                  </label>
+                  <input
+                    className="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
+                    name="college"
+                    id="college"
+                    placeholder="NIT Trichy"
+                    type="text"
+                    required
+                    value={college}
+                    onChange={(e) => saetCollege(e.target.value)}
+                  />
+                  <p className="text-red-600 astro-QYQQ6LVS" />
+                </div>
+
+                <div className="flex flex-col group astro-QYQQ6LVS font-outfit">
+                  <label
+                    id="passOutYear-label"
+                    className="mb-2 text-sm transition-colors group-focus-within:text-blue-700 astro-QYQQ6LVS font-outfit"
+                  >
+                    Passing out year
+                  </label>
+                  <input
+                    className="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
+                    name="passOut"
+                    id="passOutYear"
+                    placeholder={2024}
+                    type="number"
+                    required
+                    value={passOut}
+                    onChange={(e) => setPassOut(e.target.value)}
+                  />
+                  <p className="text-red-600 astro-QYQQ6LVS font-outfit" />
+                </div>
+                <div className="flex gap-4 ">
+                  <div class="flex flex-col gap-2 group w-[50%]">
+                    <label
+                      class="text-sm transition-colors group-focus-within:text-blue-700"
+                      for="softSkills"
+                    >
+                      Please Select a Domain ?
+                    </label>
+                    <select
+                      value={domain}
+                      name="domain"
+                      id="softSkills"
+                      onChange={(e) => {
+                        setDomain(e.target.value);
+                      }}
+                      className="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
+                    >
+                      {" "}
+                      <option>select an option</option>
+                      {COURSES_DATA.map((d) => (
+                        <option className="text-black" value={d.courseName}>
+                          {d.courseName}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                  <div class="flex flex-col gap-2 group w-[50%]">
+                    <label
+                      class="text-sm transition-colors group-focus-within:text-blue-700"
+                      for="softSkills"
+                    >
+                       Select a 2nd Domain ?
+                    </label>
+                    <select
+                      value={secondDomain}
+                      onChange={(e) => {
+                        setSecondDomain(e.target.value);
+                      }}
+                      name="secondDomain"
+                      id="language"
+                      className="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600"
+                    >
+                      <option>select an option</option>
+                      {COURSES_DATA.map((d) => (
+                        <option className="text-black" value={d.courseName}>
+                          {d.courseName}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                </div>
+
+                <button
+                  onClick={onSubmitHandler}
+                  className="block cursor-pointer mx-auto text-white btn font-outfit w-[100%]  p-3 px-6 rounded-md bg-[#252362]"
+                >
+                  Submit
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </main>
     </div>
@@ -300,4 +313,3 @@ const Register = () => {
 };
 
 export default Register;
-

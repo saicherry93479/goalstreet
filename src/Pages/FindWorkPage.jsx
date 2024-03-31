@@ -24,7 +24,7 @@ const FindWorkPage = () => {
     fetchData();
   }, []);
 
-  const filteredData = data.filter(item => {
+  const filteredData = data.filter((item) => {
     // You can adjust this condition to match your search criteria
     return (
       item.jobName.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -37,9 +37,9 @@ const FindWorkPage = () => {
     );
   });
   return (
-    <div className="bg-white px-6  py-[50px]">
+    <div className="bg-white px-[5px] md:px-6 py-2 md:py-[50px]">
       <div className="container">
-        <div className="px-6">
+        <div className=" md:px-6">
           <div className="sticky top-10 z-10">
             <div className="bg-white py-6">
               <h2 className="mb-4 text-md font-medium">Explore gigs</h2>
@@ -74,15 +74,15 @@ const FindWorkPage = () => {
             <div className="h-4 bg-gradient-to-b from-white to-transparent" />
           </div>
           <div className="flex min-w-0 items-start gap-6">
-            <div className="grid w-full shrink-0 gap-4 w-full md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
+            <div className="grid  shrink-0 gap-4 w-full md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
               {filteredData?.map((d) => (
                 <div
-                  className="flex min-h-[192px] w-full cursor-pointer flex-col rounded-lg border p-6 border-gray-100"
+                  className="flex min-h-[192px] min-w-[100%] cursor-pointer flex-col rounded-lg border p-6 border-gray-100 bg-white shadow-md"
                   id="work_12982"
                 >
                   <div className="mb-4 flex items-center gap-2">
                     <p className="text-xs   text-gray-500">
-                     posted on : {d.postedDate.slice(0, 10)}
+                      posted on : {d.postedDate.slice(0, 10)}
                     </p>
                   </div>
                   <div className="flex grow gap-2">
@@ -94,10 +94,9 @@ const FindWorkPage = () => {
                         {d.domain.toUpperCase()}
                       </p>
                     </div>
-                 
                   </div>
-                  <div className="flex gap-2">
-                    <div className="cursor-pointer inline-flex items-center rounded-full px-2.5 py-0.5 text-2xs font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 gap-1 truncate border border-green-200 bg-green-50 text-gray-800">
+                  <div className="flex gap-2 flex-col md:flex-row my-2">
+                    <div className="cursor-pointer inline-flex items-center rounded-full fit-content px-2.5 py-0.5 text-2xs font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 gap-1 truncate border border-green-200 bg-green-50 text-gray-800 w-fit">
                       <svg
                         width={16}
                         height={17}
@@ -112,11 +111,13 @@ const FindWorkPage = () => {
                       </svg>
                       ₹{d.salaryRange}
                     </div>
-                    <div className="cursor-pointer inline-flex gap-0.5 items-center rounded-full px-2.5 py-0.5 text-2xs font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 truncate border border-gray-100 bg-white text-gray-800">
-                      {d.officeType.toLowerCase()}
-                    </div>
-                    <div className="cursor-pointer inline-flex gap-0.5 items-center rounded-full px-2.5 py-0.5 text-2xs font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 truncate border border-gray-100 bg-white text-gray-800">
-                      {d.jobType.toLowerCase()}
+                    <div className="space-x-2">
+                      <div className="cursor-pointer inline-flex gap-0.5 items-center rounded-full px-2.5 py-0.5 text-2xs font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 truncate border border-gray-100 bg-white text-gray-800">
+                        {d.officeType.toLowerCase()}
+                      </div>
+                      <div className="cursor-pointer inline-flex gap-0.5 items-center rounded-full px-2.5 py-0.5 text-2xs font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 truncate border border-gray-100 bg-white text-gray-800">
+                        {d.jobType.toLowerCase()}
+                      </div>
                     </div>
                   </div>
                 </div>

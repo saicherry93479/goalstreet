@@ -81,13 +81,14 @@ const HRRegister = () => {
             "Content-Type": "application/json",
             "Access-Control-Allow-Credentials": "true",
             "Access-Control-Allow-Origin":
-              "https://goalstreetbackend.vercel.app/",
+            "http://localhost:3000",
           },
           body: JSON.stringify(requestBody),
         }
       );
       console.log("response from server ", response);
       if (!response.ok) {
+        console.log("response is ",response)
         throw new Error("Network response was not ok");
       }
       const responseData = await response.json();
@@ -101,13 +102,11 @@ const HRRegister = () => {
         setModalText("Succesfull Registered!");
         setShowModal(true);
         setError(false);
-        setName("");
-        setEmail("");
-        setPhoneNumber("");
-        setPassOut("");
-        setSecondDomain("");
-        saetCollege("");
-        setDomain("");
+        setCompanySize("")
+        setCompayName("")
+        setName("")
+        setEmail("")
+        setIndustry("")
         return;
       }
     } catch (err) {

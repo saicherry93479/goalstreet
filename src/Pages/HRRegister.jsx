@@ -107,6 +107,7 @@ const HRRegister = () => {
         setName("")
         setEmail("")
         setIndustry("")
+        setPhoneNumber("")
         return;
       }
     } catch (err) {

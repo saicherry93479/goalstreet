@@ -74,7 +74,7 @@ const HRRegister = () => {
       }; // Your request body here
 
       const response = await fetch(
-        "https://goalstreetbackend.vercel.app/submit",
+        "https://goalstreetbackend.vercel.app/submitHrForm",
         {
           method: "POST",
           headers: {

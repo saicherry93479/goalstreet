@@ -1,20 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 import Logo from "../assets/Logo.jsx";
 import LOGOGOAL from "../assets/LOG_GOAL.png";
+import "../CustomeCss/Navbar.css";
+import Place1 from "../assets/place1.png";
+import Place2 from "../assets/place2.png";
 
 const NavBar = () => {
+  const [dispaly, setDisplay] = useState(false);
+  const [inside, setInside] = useState(false);
   return (
-    <header className=" top-0 z-20 pt-6 pb-6 text-gray-900 backdrop-blur transition-all  bg-[#f0fbff]">
+    <header className="relative top-0 z-20 pt-6 pb-6 text-gray-900 backdrop-blur transition-all  bg-[#f0fbff]">
       <div className="container flex items-center justify-between gap-3">
         {/* <Logo></Logo> */}
 
         <a href="/">
-          <img className=" w-[150px] md:w-[200px]"  src={LOGOGOAL}></img>
+          <img className=" w-[150px] md:w-[200px]" src={LOGOGOAL}></img>
         </a>
         <ul
-          className="hidden items-center gap-1 rounded-full px-4 lg:flex  hover:bg-opacity-80 backdrop-blur text-white bg-[#FC921B]"
+          className="hidden items-center gap-1 rounded-full px-4 lg:flex   backdrop-blur text-white bg-[#FC921B]"
           style={{ transform: "none", transformOrigin: "50% 50% 0px" }}
         >
+          <div className="group">
+            <p
+              className="cursor-pointer select-none whitespace-nowrap rounded-full p-3 font-semibold transition duration-300 hover:text-[#252362]"
+              onClick={()=>setDisplay(true)}
+
+              
+              
+            >
+              Programs
+            </p>
+          </div>
           <a href="/findwork">
             <li className="cursor-pointer select-none whitespace-nowrap rounded-full p-3 font-semibold transition duration-300 hover:text-[#252362]">
               Find Work
@@ -43,8 +59,187 @@ const NavBar = () => {
           </a>
         </div>
       </div>
+
+      {dispaly ? (
+        <div
+          className="hidden  lg:block  absolute w-full bg-blue=600"
+          onMouseLeave={()=>setDisplay(false)}
+          
+        >
+          <NavHoverBlock></NavHoverBlock>
+        </div>
+      ) : (
+        <></>
+      )}
     </header>
   );
 };
 
 export default NavBar;
+
+const NavHoverBlock = () => {
+  const [currentProgram, selectCurrrentProgram] = useState(0);
+  const [currentBranch, selectCurrrentBranch] = useState(0);
+  const [currentCourse, selectCurrrentCourse] = useState(0);
+
+  const branches = [
+    ["CSE / IT", "ECE/ EEE ", "Mechanical", "Civil", "Management"],
+    ["Job Gurantee Programs", "Pro Degree"],
+  ];
+  const courses = [
+    [
+      [
+        "Machine Learning",
+        "Web Development",
+        "Artifical Inteligence",
+        "Cyber Security",
+        "Data Science",
+        "Azure Cloud Computing",
+        "Andriod Devlopment",
+        "Database Management Systems",
+      ],
+      ["Internet of Things", "Embedded Systems", "Robotics", "PLC"],
+      ["AutoCAD", "Hybrid & Electric Vehicle", "Car Design", "Ic Engine"],
+      ["AutoCAD", "Construction Planning & Construction"],
+      [
+        "Digital Marketing",
+        "Finance",
+        "Human Resources",
+        "Marketing",
+        "Stock market & CryptoCurrency",
+      ],
+    ],
+    [
+      [
+        "Full-Stack Web Devlopment",
+        "Marketing & Digital Marketing",
+        "Human Resources",
+        "Flutter",
+      ],
+      [
+        "Marketing & Digital Marketing",
+        "Human Resources",
+        "Data Science",
+        "Machine Learning",
+        "Flutter",
+        "Full-Stack Web Devlopment",
+      ],
+    ],
+  ];
+
+  return (
+    <div className=" container flex  gap-24 bg-red-500  navCss p-16 rounded-[30px] mt-[10px]">
+      <div className="w-[33%] space-y-8">
+        <div className="flex items-center gap-4">
+          <p className="text-[25px] font-[500]">Program</p>
+          <ArrowIcon></ArrowIcon>
+        </div>
+        <div
+          className={`flex  gap-4  items-center rounded-[10px] p-6 ${
+            currentProgram === 0 ? "bg-white  border-red-500  border-l-4" : ""
+          } `}
+          onMouseMove={() => {
+            selectCurrrentProgram(0),
+              selectCurrrentBranch(0),
+              selectCurrrentCourse(0);
+          }}
+        >
+          <img src={Place1}></img>
+          <p className="text-[26px] w-[50%] font-bold leading-6">
+            INTERNSHIP PROGRAM
+          </p>
+        </div>
+        <div
+          className={`flex  gap-4  items-center rounded-[10px] p-6 ${
+            currentProgram === 1 ? "bg-white  border-red-500  border-l-4" : ""
+          } `}
+          onMouseMove={() => {
+            selectCurrrentProgram(1),
+              selectCurrrentBranch(0),
+              selectCurrrentCourse(0);
+          }}
+        >
+          <img src={Place2}></img>
+          <p className="text-[26px] w-[60%] font-bold leading-6">
+            Placement Provision Program
+          </p>
+        </div>
+      </div>
+      <div className="w-[33%] ">
+        <div className="flex items-center p-4 gap-4  pt-0 ">
+          <p className="text-[25px] font-[500]">Branch</p>
+          <ArrowIcon size={30} color="green"></ArrowIcon>
+        </div>
+        <div className="space-y-4">
+          {branches[currentProgram].map((branch, index) => {
+            return (
+              <div
+                className={`flex  cursor-pointer justify-between gap-4  items-center rounded-[10px] p-4 ${
+                  currentBranch === index
+                    ? "bg-white  border-red-500  border-l-4"
+                    : ""
+                } `}
+                onMouseMove={() => {
+                  selectCurrrentBranch(index), selectCurrrentCourse(0);
+                }}
+              >
+                <p className="text-[25px] font-[700]">{branch}</p>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 320 512"
+                  height={16}
+                  width={16}
+                >
+                  {/*!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.*/}
+                  <path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z" />
+                </svg>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+      <div className="w-[33%]">
+        <div className="flex items-center p-4 pl-8 gap-4 pt-0 ">
+          <p className="text-[25px] font-[500]">Courses</p>
+          <ArrowIcon size={30} color="green" style="rotate-90"></ArrowIcon>
+        </div>
+
+        <div className=" ">
+          {courses[currentProgram][currentBranch].map((course, index) => {
+            return (
+              <div
+                className={`flex  gap-4  items-center rounded-[10px] p-4 pl-8 ${
+                  currentCourse === index
+                    ? "bg-white  border-red-500  border-l-4"
+                    : ""
+                } `}
+                onMouseMove={() => selectCurrrentCourse(index)}
+              >
+                <p className="text-[22px] font-bold ">{course}</p>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const ArrowIcon = ({ size = 40, style = "", color = "#e332ab" }) => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 32 32"
+      height={size}
+      className={style}
+    >
+      <path
+        d="m31.71 15.29-10-10-1.42 1.42 8.3 8.29H0v2h28.59l-8.29 8.29 1.41 1.41 10-10a1 1 0 0 0 0-1.41z"
+        data-name="3-Arrow Right"
+        color="white"
+        fill={color}
+        stroke={color}
+      />
+    </svg>
+  );
+};

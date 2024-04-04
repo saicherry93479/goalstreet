@@ -12,6 +12,7 @@ import Register from "./Pages/Register";
 import ContactUsPage from "./Pages/ContactUsPage";
 import RegisterSample from "./Components/RegisterSample";
 import HRRegister from "./Pages/HRRegister";
+import CollegeForm from "./Pages/CollegeForm";
 
 export default function App() {
   return (
@@ -47,6 +48,9 @@ export default function App() {
             path="/hrForm"
             element={<HRRegister></HRRegister>}
           ></Route>
+          <Route path="/collegeForm" element={<CollegeForm></CollegeForm>}>
+
+          </Route>
 
           <Route path="/*" element={<NotFound></NotFound>}></Route>
         </Routes>

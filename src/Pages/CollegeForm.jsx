@@ -20,13 +20,9 @@ const CollegeForm = () => {
       "-",
       phoneNumber,
       "-",
-      companyName,
+      collegeName,
       "-",
-      email,
-      "-",
-      companySize,
-      "-",
-      industry
+      email
     );
     if (!name || !phoneNumber || !collegeName || !email) {
       setModalText("Please Enter all the fields Required!");

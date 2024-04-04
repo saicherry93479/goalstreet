@@ -158,3 +158,7 @@ html {
   scroll-behavior: smooth !important;
  
 }
+.navCss{
+  background: rgb(252,146,27);
+  background: linear-gradient(238deg, rgba(252,146,27,1) 28%, rgba(242,229,215,1) 80%);
+}

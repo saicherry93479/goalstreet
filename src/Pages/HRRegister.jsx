@@ -135,6 +135,21 @@ const HRRegister = () => {
                   </div>
                   <div className="block pl-2 font-semibold text-xl self-start text-gray-700">
                     <h2 className="leading-relaxed">HR Register</h2>
+                    <div className="flex gap-2 ">
+                      <a
+                        href="/collegeForm"
+                        className="text-[14px] underline cursor-pointer text-blue-500"
+                      >
+                        Join as college
+                      </a>
+                      <p>/</p>
+                      <a
+                        href="/register"
+                        className="text-[14px] underline cursor-pointer  text-blue-500"
+                      >
+                        Join as student
+                      </a>
+                    </div>
                   </div>
                 </div>
                 <div className="flex flex-col group astro-QYQQ6LVS font-outfit">

@@ -54,11 +54,11 @@ const CollegeForm = () => {
       const requestBody = {
         pcName: name,
         pcEmail: email,
-        pcNumber: phoneNumber,
-        college: collegeName,
+        pcPhoneNumber: phoneNumber,
+        collegeName: collegeName,
       }; // Your request body here
 
-      const response = await fetch("http://localhost:3000/submitHrForm", {
+      const response = await fetch("https://goalstreetbackend.vercel.app/submitCollegeForm", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

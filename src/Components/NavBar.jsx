@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Logo from "../assets/Logo.jsx";
 import LOGOGOAL from "../assets/LOG_GOAL.png";
 import Place1 from "../assets/place1.png";
 import Place2 from "../assets/place2.png";
@@ -127,15 +126,15 @@ const NavHoverBlock = () => {
   ];
 
   return (
-    <div className=" container flex lg:gap-16 xl:gap-24 bg-red-500  navCss p-16 rounded-[30px] mt-[10px] mx-auto lg:!w-[80%] xl:!w-[70%] shadow-[rgba(100,100,111,0.2)_0px_7px_29px_0px]">
+    <div className=" container flex lg:gap-16 xl:gap-24 bg-[#faf8f5] navCss  p-16 rounded-[30px] mt-[10px] mx-auto lg:!w-[80%] xl:!w-[70%] shadow-[rgba(100,100,111,0.2)_0px_7px_29px_0px]">
       <div className="w-[33%] space-y-8">
         <div className="flex items-center gap-4">
           <p className="lg:text-[18px] xl:text-[25px] font-[500]">Program</p>
-          <ArrowIcon></ArrowIcon>
+          <ArrowIcon color="#FC921B"></ArrowIcon>
         </div>
         <div
-          className={`flex  gap-4  items-center rounded-[10px] p-6 ${
-            currentProgram === 0 ? "bg-white  border-red-500  border-l-4" : ""
+          className={`flex  gap-4  items-center rounded-[10px] p-6 cursor-pointer ${
+            currentProgram === 0 ? "bg-[#F1FAFF]  border-[#FC921B]  border-l-[5px]  shadow-[rgba(0,0,0,0.1)_0px_4px_12px] " : ""
           } `}
           onMouseMove={() => {
             selectCurrrentProgram(0),
@@ -149,8 +148,8 @@ const NavHoverBlock = () => {
           </p>
         </div>
         <div
-          className={`flex  gap-4  items-center rounded-[10px] p-6 ${
-            currentProgram === 1 ? "bg-white  border-red-500  border-l-4" : ""
+          className={`flex  gap-4  items-center rounded-[10px] p-6 cursor-pointer ${
+            currentProgram === 1 ? "bg-[#F1FAFF]  border-[#FC921B] border-l-[5px]  shadow-[rgba(0,0,0,0.1)_0px_4px_12px]" : ""
           } `}
           onMouseMove={() => {
             selectCurrrentProgram(1),
@@ -167,7 +166,7 @@ const NavHoverBlock = () => {
       <div className="w-[33%] ">
         <div className="flex items-center p-4 gap-4  pt-0 ">
           <p className="lg:text-[18px] xl:text-[25px] font-[500]">Branch</p>
-          <ArrowIcon size={30} color="green"></ArrowIcon>
+          <ArrowIcon size={30} color="#FC921B"></ArrowIcon>
         </div>
         <div className="space-y-4">
           {branches[currentProgram].map((branch, index) => {
@@ -175,7 +174,7 @@ const NavHoverBlock = () => {
               <div
                 className={`flex  cursor-pointer justify-between gap-4  items-center rounded-[10px] p-4 ${
                   currentBranch === index
-                    ? "bg-white  border-red-500  border-l-4"
+                    ? "bg-[#F1FAFF] border-[#FC921B]  border-l-[5px]  shadow-[rgba(0,0,0,0.1)_0px_4px_12px]"
                     : ""
                 } `}
                 onMouseMove={() => {
@@ -200,16 +199,16 @@ const NavHoverBlock = () => {
       <div className="w-[33%]">
         <div className="flex items-center p-4 pl-8 gap-4 pt-0 ">
           <p className="lg:text-[18px] xl:text-[25px]font-[500]">Courses</p>
-          <ArrowIcon size={30} color="green" style="rotate-90"></ArrowIcon>
+          <ArrowIcon size={30} color="#FC921B" style="rotate-90"></ArrowIcon>
         </div>
 
         <div className=" ">
           {courses[currentProgram][currentBranch].map((course, index) => {
             return (
               <div
-                className={`flex  gap-4  items-center rounded-[10px] p-4 pl-8 ${
+                className={`flex  gap-4  cursor-pointer items-center rounded-[10px] p-4 pl-8 ${
                   currentCourse === index
-                    ? "bg-white  border-red-500  border-l-4"
+                    ? "bg-[#F1FAFF]  border-[#FC921B]  border-l-[5px] shadow-[rgba(0,0,0,0.1)_0px_4px_12px]"
                     : ""
                 } `}
                 onMouseMove={() => selectCurrrentCourse(index)}

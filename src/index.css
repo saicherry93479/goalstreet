@@ -159,6 +159,11 @@ html {
  
 }
 .navCss{
-  background: rgb(252,146,27);
-  background: linear-gradient(238deg, rgba(252,146,27,1) 28%, rgba(242,229,215,1) 80%);
+  background: hsla(32, 97%, 55%, 1);
+
+  background: linear-gradient(135deg, hsla(32, 97%, 55%, 1) 0%, hsla(31, 45%, 89%, 1) 65%, hsla(0, 0%, 100%, 1) 100%);
+  
+  background: -moz-linear-gradient(135deg, hsla(32, 97%, 55%, 1) 0%, hsla(31, 45%, 89%, 1) 65%, hsla(0, 0%, 100%, 1) 100%);
+  
+  background: -webkit-linear-gradient(135deg, hsla(32, 97%, 55%, 1) 0%, hsla(31, 45%, 89%, 1) 65%, hsla(0, 0%, 100%, 1) 100%);
 }

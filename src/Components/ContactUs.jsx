@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
 const ContactUs = () => {
-  const [email,setEmail]=useState('')
-  const [message,setMessage]=useState('')
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
   return (
     <div className="container py-12 w-screen text-black " id="contactus">
       <div className="relative">
@@ -27,8 +27,12 @@ const ContactUs = () => {
           </p>
           <form
             className="mt-10 max-w-prose"
-
-
+            onSubmit={(e) => {
+              e.preventDefault();
+              setEmail("");
+              setMessage("");
+              console.log('came')
+            }}
           >
             <p>
               <label>Your email: </label>
@@ -36,7 +40,8 @@ const ContactUs = () => {
                 className="input"
                 type="email"
                 maxLength={100}
-                name={email}
+                value={email}
+                onChange={(e)=>setEmail(e.target.value)}
                 required={true}
               />
             </p>
@@ -45,20 +50,16 @@ const ContactUs = () => {
               <textarea
                 className="input"
                 maxLength={500}
-                name={message}
+                value={message}
                 required={true}
                 rows={5}
+                onChange={(e)=>setMessage(e.target.value)}
                 defaultValue={""}
               />
             </p>
             <button
               className="group inline-block px-6 py-3 text-sm no-underline uppercase text-center text-white tracking-wider font-medium md:font-semibold rounded-full  transition-all duration-200 ease-out hover:text-white hover:no-underline undefined bg-[#252362] hover:bg-[#25236290]"
-              onSubmit={()=>{
-                setEmail("")
-                setMessage("")
-
-
-              }}
+              type="submit"
             >
               Send
             </button>

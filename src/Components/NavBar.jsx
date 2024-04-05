@@ -27,7 +27,6 @@ const NavBar = () => {
                   setDisplay(true);
                 }
               }}
-              
             >
               Programs
             </p>
@@ -53,7 +52,7 @@ const NavBar = () => {
           <a href="/register">
             <button
               type="button"
-              class="inline-flex items-center whitespace-nowrap select-none justify-center font-medium gap-2 duration-200 ring-offset-background transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none rounded-lg disabled:opacity-50 disabled:grayscale  text-white text-primary-foreground hover:bg-opacity-60 text-sm md:text-md px-2 md:px-7 py-2 md:py-4 bg-[#252362]"
+              class="inline-flex items-center whitespace-nowrap select-none justify-center font-medium gap-2 duration-200 ring-offset-background transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none rounded-lg disabled:opacity-50 disabled:grayscale  text-white text-primary-foreground hover:bg-opacity-60 text-sm md:text-md px-2 md:px-7 py-2 md:py-4 bg-[#252362] !rounded-full"
             >
               Join Now
             </button>
@@ -65,7 +64,6 @@ const NavBar = () => {
           className="hidden lg:block   absolute w-full bg-blue=600 dropdown-content"
           onMouseLeave={() => {
             setDisplay(false),
-        
               console.log(
                 "left the dropdown set the dispaly and inside to false"
               );
@@ -198,9 +196,7 @@ const NavHoverBlock = () => {
                   selectCurrrentBranch(index), selectCurrrentCourse(0);
                 }}
               >
-                <p className="lg:text-[18px]  font-[700]">
-                  {branch}
-                </p>
+                <p className="lg:text-[18px]  font-[700]">{branch}</p>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 320 512"
@@ -225,7 +221,7 @@ const NavHoverBlock = () => {
           {courses[currentProgram][currentBranch].map((course, index) => {
             return (
               <a
-              href="/register"
+                href="/register"
                 className={`flex  gap-4  cursor-pointer items-center rounded-[10px] p-4  ${
                   currentCourse === index
                     ? "bg-[#F1FAFF]  border-[#FC921B]  border-l-[5px] shadow-[rgba(0,0,0,0.1)_0px_4px_12px]"
@@ -233,9 +229,7 @@ const NavHoverBlock = () => {
                 } `}
                 onMouseMove={() => selectCurrrentCourse(index)}
               >
-                <p className="lg:text-[18px] font-bold ">
-                  {course}
-                </p>
+                <p className="lg:text-[18px] font-bold ">{course}</p>
               </a>
             );
           })}

@@ -6,6 +6,7 @@ import Place2 from "../assets/place2.png";
 const NavBar = () => {
   const [dispaly, setDisplay] = useState(false);
   const [inside, setInside] = useState(false);
+
   return (
     <header className="relative top-0 z-20 pt-6 pb-6 text-gray-900 backdrop-blur transition-all  bg-[#f0fbff]">
       <div className="container flex items-center justify-between gap-3">
@@ -20,10 +21,12 @@ const NavBar = () => {
         >
           <div className="group">
             <p
-              className="cursor-pointer select-none whitespace-nowrap rounded-full p-3 font-semibold transition duration-300 hover:text-[#252362]"
-              onClick={()=>setDisplay(true)}
-
-              
+              className="cursor-pointer select-none whitespace-nowrap rounded-full p-3 font-semibold transition duration-300 hover:text-[#252362] "
+              onMouseEnter={() => {
+                if (dispaly === false) {
+                  setDisplay(true);
+                }
+              }}
               
             >
               Programs
@@ -57,12 +60,22 @@ const NavBar = () => {
           </a>
         </div>
       </div>
-
       {dispaly ? (
         <div
-          className="hidden  lg:block  absolute w-full bg-blue=600"
-          onMouseLeave={()=>setDisplay(false)}
-          
+          className="hidden lg:block   absolute w-full bg-blue=600 dropdown-content"
+          onMouseLeave={() => {
+            setDisplay(false),
+        
+              console.log(
+                "left the dropdown set the dispaly and inside to false"
+              );
+          }}
+          // onMouseEnter={() => {
+          //   if (inside === false) {
+          //     setInside(true);
+          //   }
+          //   console.log("entered drop down inside is set to true");
+          // }}
         >
           <NavHoverBlock></NavHoverBlock>
         </div>
@@ -134,7 +147,9 @@ const NavHoverBlock = () => {
         </div>
         <div
           className={`flex  gap-4  items-center rounded-[10px] p-6 cursor-pointer ${
-            currentProgram === 0 ? "bg-[#F1FAFF]  border-[#FC921B]  border-l-[5px]  shadow-[rgba(0,0,0,0.1)_0px_4px_12px] " : ""
+            currentProgram === 0
+              ? "bg-[#F1FAFF]  border-[#FC921B]  border-l-[5px]  shadow-[rgba(0,0,0,0.1)_0px_4px_12px] "
+              : ""
           } `}
           onMouseMove={() => {
             selectCurrrentProgram(0),
@@ -149,7 +164,9 @@ const NavHoverBlock = () => {
         </div>
         <div
           className={`flex  gap-4  items-center rounded-[10px] p-6 cursor-pointer ${
-            currentProgram === 1 ? "bg-[#F1FAFF]  border-[#FC921B] border-l-[5px]  shadow-[rgba(0,0,0,0.1)_0px_4px_12px]" : ""
+            currentProgram === 1
+              ? "bg-[#F1FAFF]  border-[#FC921B] border-l-[5px]  shadow-[rgba(0,0,0,0.1)_0px_4px_12px]"
+              : ""
           } `}
           onMouseMove={() => {
             selectCurrrentProgram(1),
@@ -159,7 +176,7 @@ const NavHoverBlock = () => {
         >
           <img src={Place2}></img>
           <p className="lg:text-[22px] xl:text-[24px]  w-[60%] font-bold leading-6">
-            PLACEMENT  PROVISION ROGRAM
+            PLACEMENT PROVISION ROGRAM
           </p>
         </div>
       </div>
@@ -181,7 +198,9 @@ const NavHoverBlock = () => {
                   selectCurrrentBranch(index), selectCurrrentCourse(0);
                 }}
               >
-                <p className="lg:text-[18px] xl:text-[24px] font-[700]">{branch}</p>
+                <p className="lg:text-[18px] xl:text-[24px] font-[700]">
+                  {branch}
+                </p>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 320 512"
@@ -213,7 +232,9 @@ const NavHoverBlock = () => {
                 } `}
                 onMouseMove={() => selectCurrrentCourse(index)}
               >
-                <p className="lg:text-[18px] xl:text-[20px] font-bold ">{course}</p>
+                <p className="lg:text-[18px] xl:text-[20px] font-bold ">
+                  {course}
+                </p>
               </div>
             );
           })}

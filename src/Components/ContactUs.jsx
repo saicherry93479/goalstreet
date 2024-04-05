@@ -25,8 +25,8 @@ const ContactUs = () => {
           </p>
           <form
             className="mt-10 max-w-prose"
-            action="https://formspree.io/f/mlezrkze"
-            method="POST"
+            action="/"
+
           >
             <p>
               <label>Your email: </label>

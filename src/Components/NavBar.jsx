@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Logo from "../assets/Logo.jsx";
 import LOGOGOAL from "../assets/LOG_GOAL.png";
-import "../CustomeCss/Navbar.css";
 import Place1 from "../assets/place1.png";
 import Place2 from "../assets/place2.png";
 

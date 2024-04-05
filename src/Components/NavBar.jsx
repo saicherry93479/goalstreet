@@ -216,7 +216,7 @@ const NavHoverBlock = () => {
         </div>
       </div>
       <div className="w-[33%] ">
-        <div className="flex items-center p-4 pl-8 gap-4 pt-0 ">
+        <div className="flex items-center p-4  gap-4 pt-0 ">
           <p className="lg:text-[18px] font-[500]">Courses</p>
           <ArrowIcon size={30} color="#FC921B" style="rotate-90"></ArrowIcon>
         </div>
@@ -226,7 +226,7 @@ const NavHoverBlock = () => {
             return (
               <a
               href="/register"
-                className={`flex  gap-4  cursor-pointer items-center rounded-[10px] p-4 pl-8 ${
+                className={`flex  gap-4  cursor-pointer items-center rounded-[10px] p-4  ${
                   currentCourse === index
                     ? "bg-[#F1FAFF]  border-[#FC921B]  border-l-[5px] shadow-[rgba(0,0,0,0.1)_0px_4px_12px]"
                     : ""

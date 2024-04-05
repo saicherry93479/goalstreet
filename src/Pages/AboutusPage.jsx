@@ -1,5 +1,5 @@
 import React from "react";
-
+import AboutusPic from '../assets/AboutUs.jpeg'
 const AboutusPage = () => {
   return (
     <div className="bg-white">
@@ -7,7 +7,7 @@ const AboutusPage = () => {
         {" "}
         <img
           className=" lg:w-[50%]"
-          src="https://plus.unsplash.com/premium_photo-1689551670902-19b441a6afde?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGluZGVwZW5kZW50JTIwd29tZW58ZW58MHx8MHx8fDA%3D"
+          src={AboutusPic}
           alt=""
         />{" "}
         <div className="bg-[#E5611A] p-[20px] md:p-[32px] lg:p-[64px] rounded-[20px] space-y-[20px] lg:w-fit lg:flex lg:flex-col lg:justify-center">
@@ -16,22 +16,20 @@ const AboutusPage = () => {
             About Us
           </h1>{" "}
           <p>
-            SREE BOUTIQUE epitomizes the essence of timeless fashion, offering a
-            curated selection of apparel and accessories that seamlessly blend
-            elegance with contemporary flair. With a keen eye for detail and a
-            dedication to craftsmanship, we strive to provide discerning
-            individuals with garments that not only elevate their style but also
-            reflect their unique personality. 
-            {<br/>}
-            {<br/>}
-            Our boutique is more than just a
-            shopping destination; it's a haven where customers are welcomed into
-            a warm and inviting atmosphere. Whether you're seeking the perfect
-            outfit for a special occasion or simply updating your wardrobe with
-            the latest trends, our knowledgeable staff are here to assist you
-            every step of the way. Discover the epitome of sophistication and
-            style at SREE BOUTIQUE, where fashion knows no bounds. Thank you for
-            choosing us, and I look forward to assisting you soon.
+            At GoalStreet, we believe in empowering students to unlock their
+            full potential and embark on successful career journeys. We
+            understand that internships play a pivotal role in shaping career
+            paths, and our platform is designed to connect students with
+            valuable internship opportunities that align with their aspirations
+            and academic pursuits.
+            {<br />}
+            {<br />}
+            Our mission at GoalStreet is simple yet profound: to bridge the gap
+            between education and professional experience by providing students
+            with meaningful internship opportunities. We strive to facilitate
+            connections between ambitious students and reputable organizations,
+            fostering a mutually beneficial relationship where both parties can
+            learn and grow.
           </p>{" "}
         </div>{" "}
       </div>

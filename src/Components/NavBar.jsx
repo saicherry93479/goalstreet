@@ -158,7 +158,7 @@ const NavHoverBlock = () => {
           }}
         >
           <img src={Place1}></img>
-          <p className="lg:text-[19px]   font-bold leading-6">
+          <p className="lg:text-[18px]   font-bold leading-6">
             INTERNSHIP PROGRAM
           </p>
         </div>
@@ -175,7 +175,7 @@ const NavHoverBlock = () => {
           }}
         >
           <img src={Place2}></img>
-          <p className="lg:text-[19px]    font-bold leading-6">
+          <p className="lg:text-[18px]    font-bold leading-6">
             PLACEMENT PROVISION ROGRAM
           </p>
         </div>

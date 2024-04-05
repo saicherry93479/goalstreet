@@ -139,10 +139,10 @@ const NavHoverBlock = () => {
   ];
 
   return (
-    <div className=" container flex lg:gap-16 xl:gap-24 bg-[#faf8f5] navCss  p-16 rounded-[30px] mt-[10px] mx-auto lg:!w-[80%] xl:!w-[70%] shadow-[rgba(100,100,111,0.2)_0px_7px_29px_0px]">
+    <div className=" container flex lg:gap-16 xl:gap-24 bg-[#faf8f5] navCss  p-16 rounded-[30px] mt-[10px] mx-auto lg:!w-[80%] xl:!w-[60%] !max-h-[500px] shadow-[rgba(100,100,111,0.2)_0px_7px_29px_0px]">
       <div className="w-[33%] space-y-8">
         <div className="flex items-center gap-4">
-          <p className="lg:text-[18px] xl:text-[25px] font-[500]">Program</p>
+          <p className="lg:text-[18px]  font-[500]">Program</p>
           <ArrowIcon color="#FC921B"></ArrowIcon>
         </div>
         <div
@@ -158,7 +158,7 @@ const NavHoverBlock = () => {
           }}
         >
           <img src={Place1}></img>
-          <p className="lg:text-[22px] xl:text-[24px] w-[50%] font-bold leading-6">
+          <p className="lg:text-[22px]   font-bold leading-6">
             INTERNSHIP PROGRAM
           </p>
         </div>
@@ -175,21 +175,21 @@ const NavHoverBlock = () => {
           }}
         >
           <img src={Place2}></img>
-          <p className="lg:text-[22px] xl:text-[24px]  w-[60%] font-bold leading-6">
+          <p className="lg:text-[22px]    font-bold leading-6">
             PLACEMENT PROVISION ROGRAM
           </p>
         </div>
       </div>
       <div className="w-[33%] ">
         <div className="flex items-center p-4 gap-4  pt-0 ">
-          <p className="lg:text-[18px] xl:text-[25px] font-[500]">Branch</p>
+          <p className="lg:text-[18px]  font-[500]">Branch</p>
           <ArrowIcon size={30} color="#FC921B"></ArrowIcon>
         </div>
-        <div className="space-y-4">
+        <div className="space-y-4 max-h-[370px] overflow-y-scroll  ">
           {branches[currentProgram].map((branch, index) => {
             return (
               <div
-                className={`flex  cursor-pointer justify-between gap-4  items-center rounded-[10px] p-4 ${
+                className={`flex  cursor-pointer justify-between gap-4  items-center rounded-[10px] p-4   ${
                   currentBranch === index
                     ? "bg-[#F1FAFF] border-[#FC921B]  border-l-[5px]  shadow-[rgba(0,0,0,0.1)_0px_4px_12px]"
                     : ""
@@ -198,7 +198,7 @@ const NavHoverBlock = () => {
                   selectCurrrentBranch(index), selectCurrrentCourse(0);
                 }}
               >
-                <p className="lg:text-[18px] xl:text-[24px] font-[700]">
+                <p className="lg:text-[18px]  font-[700]">
                   {branch}
                 </p>
                 <svg
@@ -215,13 +215,13 @@ const NavHoverBlock = () => {
           })}
         </div>
       </div>
-      <div className="w-[33%]">
+      <div className="w-[33%] ">
         <div className="flex items-center p-4 pl-8 gap-4 pt-0 ">
-          <p className="lg:text-[18px] xl:text-[25px]font-[500]">Courses</p>
+          <p className="lg:text-[18px] font-[500]">Courses</p>
           <ArrowIcon size={30} color="#FC921B" style="rotate-90"></ArrowIcon>
         </div>
 
-        <div className=" ">
+        <div className="overflow-y-scroll max-h-[370px] overflow-y-scroll  ">
           {courses[currentProgram][currentBranch].map((course, index) => {
             return (
               <a
@@ -233,7 +233,7 @@ const NavHoverBlock = () => {
                 } `}
                 onMouseMove={() => selectCurrrentCourse(index)}
               >
-                <p className="lg:text-[18px] xl:text-[20px] font-bold ">
+                <p className="lg:text-[18px] font-bold ">
                   {course}
                 </p>
               </a>

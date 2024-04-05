@@ -224,7 +224,8 @@ const NavHoverBlock = () => {
         <div className=" ">
           {courses[currentProgram][currentBranch].map((course, index) => {
             return (
-              <div
+              <a
+              href="/register"
                 className={`flex  gap-4  cursor-pointer items-center rounded-[10px] p-4 pl-8 ${
                   currentCourse === index
                     ? "bg-[#F1FAFF]  border-[#FC921B]  border-l-[5px] shadow-[rgba(0,0,0,0.1)_0px_4px_12px]"
@@ -235,7 +236,7 @@ const NavHoverBlock = () => {
                 <p className="lg:text-[18px] xl:text-[20px] font-bold ">
                   {course}
                 </p>
-              </div>
+              </a>
             );
           })}
         </div>

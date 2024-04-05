@@ -103,7 +103,7 @@ const CollegeForm = () => {
       ) : null}
       <main>
         <div className="min-h-[80vh] px-0 bg-gray-100  flex justify-center sm:py-12 ">
-          <div className="relative py-3 w-screen sm:w-[100%]  md:w-[600px]  lg:w-[40%] xl:w-[30%]">
+          <div className="relative py-3 w-screen sm:w-[100%]  md:w-[600px]  lg:w-[50%] xl:w-[35%]">
             <div className="relative bg-blue-500   px-4 md:px-8 py-10 bg-white mx-4 md:mx-8 md:mx-0  shadow rounded-3xl sm:p-10">
               <div className="text-base leading-6 space-y-4  text-gray-700 md:text-lg sm:leading-7">
                 <div className="flex items-center space-x-5 ">

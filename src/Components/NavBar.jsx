@@ -139,7 +139,7 @@ const NavHoverBlock = () => {
   ];
 
   return (
-    <div className=" container flex lg:gap-16 xl:gap-24 bg-[#faf8f5] navCss  p-16 rounded-[30px] mt-[10px] mx-auto lg:!w-[80%] xl:!w-[60%] !max-h-[500px] shadow-[rgba(100,100,111,0.2)_0px_7px_29px_0px]">
+    <div className=" container flex lg:gap-16 xl:gap-24 bg-[#faf8f5] navCss  px-16 py-8 rounded-[30px] mt-[10px] mx-auto lg:!w-[80%] xl:!w-[60%] !max-h-[500px] shadow-[rgba(100,100,111,0.2)_0px_7px_29px_0px]">
       <div className="w-[33%] space-y-8">
         <div className="flex items-center gap-4">
           <p className="lg:text-[18px]  font-[500]">Program</p>

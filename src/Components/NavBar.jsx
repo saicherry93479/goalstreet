@@ -146,7 +146,7 @@ const NavHoverBlock = () => {
           <ArrowIcon color="#FC921B"></ArrowIcon>
         </div>
         <div
-          className={`flex  gap-4  items-center rounded-[10px] p-6 cursor-pointer ${
+          className={`flex  gap-2  items-center rounded-[10px] p-6 cursor-pointer ${
             currentProgram === 0
               ? "bg-[#F1FAFF]  border-[#FC921B]  border-l-[5px]  shadow-[rgba(0,0,0,0.1)_0px_4px_12px] "
               : ""
@@ -158,12 +158,12 @@ const NavHoverBlock = () => {
           }}
         >
           <img src={Place1}></img>
-          <p className="lg:text-[22px]   font-bold leading-6">
+          <p className="lg:text-[19px]   font-bold leading-6">
             INTERNSHIP PROGRAM
           </p>
         </div>
         <div
-          className={`flex  gap-4  items-center rounded-[10px] p-6 cursor-pointer ${
+          className={`flex  gap-2  items-center rounded-[10px] p-6 cursor-pointer ${
             currentProgram === 1
               ? "bg-[#F1FAFF]  border-[#FC921B] border-l-[5px]  shadow-[rgba(0,0,0,0.1)_0px_4px_12px]"
               : ""
@@ -175,7 +175,7 @@ const NavHoverBlock = () => {
           }}
         >
           <img src={Place2}></img>
-          <p className="lg:text-[22px]    font-bold leading-6">
+          <p className="lg:text-[19px]    font-bold leading-6">
             PLACEMENT PROVISION ROGRAM
           </p>
         </div>

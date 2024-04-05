@@ -6,7 +6,7 @@ const AboutusPage = () => {
       <div className="px-6 lg:px-12  xl:px-52 mx-auto flex flex-col gap-[20px] py-[5rem] lg:flex-row   text-white">
         {" "}
         <img
-          className=" lg:w-[50%]"
+          className=" lg:w-[50%] object-cover"
           src={AboutusPic}
           alt=""
         />{" "}

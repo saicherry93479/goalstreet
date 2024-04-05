@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Logo from "../assets/Logo.jsx";
 import LOGOGOAL from "../assets/LOG_GOAL.png";
+import "../CustomeCss/Navbar.css";
 import Place1 from "../assets/place1.png";
 import Place2 from "../assets/place2.png";
 
@@ -127,10 +128,10 @@ const NavHoverBlock = () => {
   ];
 
   return (
-    <div className=" container flex  gap-24 bg-red-500  navCss p-16 rounded-[30px] mt-[10px]">
+    <div className=" container flex lg:gap-16 xl:gap-24 bg-red-500  navCss p-16 rounded-[30px] mt-[10px] mx-auto lg:!w-[80%] xl:!w-[70%]">
       <div className="w-[33%] space-y-8">
         <div className="flex items-center gap-4">
-          <p className="text-[25px] font-[500]">Program</p>
+          <p className="lg:text-[18px] xl:text-[25px] font-[500]">Program</p>
           <ArrowIcon></ArrowIcon>
         </div>
         <div
@@ -144,7 +145,7 @@ const NavHoverBlock = () => {
           }}
         >
           <img src={Place1}></img>
-          <p className="text-[26px] w-[50%] font-bold leading-6">
+          <p className="lg:text-[22px] xl:text-[24px] w-[50%] font-bold leading-6">
             INTERNSHIP PROGRAM
           </p>
         </div>
@@ -159,14 +160,14 @@ const NavHoverBlock = () => {
           }}
         >
           <img src={Place2}></img>
-          <p className="text-[26px] w-[60%] font-bold leading-6">
-            Placement Provision Program
+          <p className="lg:text-[22px] xl:text-[24px]  w-[60%] font-bold leading-6">
+            PLACEMENT  PROVISION ROGRAM
           </p>
         </div>
       </div>
       <div className="w-[33%] ">
         <div className="flex items-center p-4 gap-4  pt-0 ">
-          <p className="text-[25px] font-[500]">Branch</p>
+          <p className="lg:text-[18px] xl:text-[25px] font-[500]">Branch</p>
           <ArrowIcon size={30} color="green"></ArrowIcon>
         </div>
         <div className="space-y-4">
@@ -182,7 +183,7 @@ const NavHoverBlock = () => {
                   selectCurrrentBranch(index), selectCurrrentCourse(0);
                 }}
               >
-                <p className="text-[25px] font-[700]">{branch}</p>
+                <p className="lg:text-[18px] xl:text-[24px] font-[700]">{branch}</p>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 320 512"
@@ -199,7 +200,7 @@ const NavHoverBlock = () => {
       </div>
       <div className="w-[33%]">
         <div className="flex items-center p-4 pl-8 gap-4 pt-0 ">
-          <p className="text-[25px] font-[500]">Courses</p>
+          <p className="lg:text-[18px] xl:text-[25px]font-[500]">Courses</p>
           <ArrowIcon size={30} color="green" style="rotate-90"></ArrowIcon>
         </div>
 
@@ -214,7 +215,7 @@ const NavHoverBlock = () => {
                 } `}
                 onMouseMove={() => selectCurrrentCourse(index)}
               >
-                <p className="text-[22px] font-bold ">{course}</p>
+                <p className="lg:text-[18px] xl:text-[20px] font-bold ">{course}</p>
               </div>
             );
           })}

@@ -3,10 +3,10 @@ import AboutusPic from '../assets/AboutUs.jpeg'
 const AboutusPage = () => {
   return (
     <div className="bg-white">
-      <div className="px-6 lg:px-12  xl:px-52 mx-auto flex flex-col gap-[20px] py-[5rem] lg:flex-row   text-white">
+      <div className="container mx-auto flex flex-col gap-[20px] py-[5rem] lg:flex-row   text-white">
         {" "}
         <img
-          className=" lg:w-[50%] object-cover"
+          className=" lg:w-[50%] object-cover aspect-square "
           src={AboutusPic}
           alt=""
         />{" "}

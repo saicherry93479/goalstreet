@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 
 const ContactUs = () => {
+  const [email,setEmail]=useState('')
+  const [message,setMessage]=useState('')
   return (
     <div className="container py-12 w-screen text-black " id="contactus">
       <div className="relative">
@@ -25,7 +27,7 @@ const ContactUs = () => {
           </p>
           <form
             className="mt-10 max-w-prose"
-            action="/"
+
 
           >
             <p>
@@ -34,8 +36,8 @@ const ContactUs = () => {
                 className="input"
                 type="email"
                 maxLength={100}
-                name="_replyto"
-                required=""
+                name={email}
+                required={true}
               />
             </p>
             <p>
@@ -43,15 +45,20 @@ const ContactUs = () => {
               <textarea
                 className="input"
                 maxLength={500}
-                name="message"
-                required=""
+                name={message}
+                required={true}
                 rows={5}
                 defaultValue={""}
               />
             </p>
             <button
               className="group inline-block px-6 py-3 text-sm no-underline uppercase text-center text-white tracking-wider font-medium md:font-semibold rounded-full  transition-all duration-200 ease-out hover:text-white hover:no-underline undefined bg-[#252362] hover:bg-[#25236290]"
-              type="submit"
+              onSubmit={()=>{
+                setEmail("")
+                setMessage("")
+
+
+              }}
             >
               Send
             </button>

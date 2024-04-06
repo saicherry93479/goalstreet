@@ -124,7 +124,7 @@ const CollegeForm = () => {
                         href="/hrForm"
                         className="text-[14px] underline cursor-pointer  text-blue-500"
                       >
-                        Hire Developers
+                        Hire From Us
                       </a>
                     </div>
                   </div>

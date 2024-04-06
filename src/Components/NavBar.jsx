@@ -3,12 +3,218 @@ import LOGOGOAL from "../assets/LOG_GOAL.png";
 import Place1 from "../assets/place1.png";
 import Place2 from "../assets/place2.png";
 
+const branches = [
+  ["CSE / IT", "ECE/ EEE ", "Mechanical", "Civil", "Management"],
+  ["Job Gurantee Programs", "Pro Degree"],
+];
+const courses = [
+  [
+    [
+      "Machine Learning",
+      "Web Development",
+      "Artifical Inteligence",
+      "Cyber Security",
+      "Data Science",
+      "Azure Cloud Computing",
+      "Andriod Devlopment",
+      "Database Management Systems",
+    ],
+    ["Internet of Things", "Embedded Systems", "Robotics", "PLC"],
+    ["AutoCAD", "Hybrid & Electric Vehicle", "Car Design", "Ic Engine"],
+    ["AutoCAD", "Construction Planning & Construction"],
+    [
+      "Digital Marketing",
+      "Finance",
+      "Human Resources",
+      "Marketing",
+      "Stock market & CryptoCurrency",
+    ],
+  ],
+  [
+    [
+      "Full-Stack Web Devlopment",
+      "Marketing & Digital Marketing",
+      "Human Resources",
+      "Flutter",
+    ],
+    [
+      "Marketing & Digital Marketing",
+      "Human Resources",
+      "Data Science",
+      "Machine Learning",
+      "Flutter",
+      "Full-Stack Web Devlopment",
+    ],
+  ],
+];
+
 const NavBar = () => {
   const [dispaly, setDisplay] = useState(false);
   const [inside, setInside] = useState(false);
+  const [showPrograms, setShowPrograms] = useState(true);
+  const [showBranches, setShowBranches] = useState(false);
+  const [showCourses, setShowCourses] = useState(false);
+
+  const [currentProgram, selectCurrrentProgram] = useState(0);
+  const [currentBranch, selectCurrrentBranch] = useState(0);
+
+  function toggleMenu() {
+    console.log("toggleMenu");
+    const body = document.body;
+    const menu = document.getElementById("fullscreenMenu");
+
+    if (menu.classList.contains("hidden")) {
+      console.log("menu is hidden so removing hidden");
+      menu.classList.remove("hidden");
+      body.classList.add("overflow-hidden");
+    } else {
+      menu.classList.add("hidden");
+      body.classList.remove("overflow-hidden");
+      setShowCourses(false);
+      setShowBranches(false);
+      setShowPrograms(true);
+      selectCurrrentBranch(0);
+      selectCurrrentProgram(0);
+    }
+  }
 
   return (
     <header className="relative top-0 z-20 pt-6 pb-6 text-gray-900 backdrop-blur transition-all  bg-[#f0fbff]">
+      {/* menu for sm screens  */}
+      <div
+        id="fullscreenMenu"
+        className="fixed  hidden lg:hidden  bg-white p-8 h-screen w-screen sm:w-[70%] md:w-[50%]  top-0 overflow-hidden fullscreenMenu"
+      >
+        <div className="flex space-between">
+          {showPrograms === false && (
+            <div
+              className="cursor-pointer"
+              onClick={() => {
+                if (showCourses === true) {
+                  setShowCourses(false);
+                  setShowBranches(true);
+                }
+                if (showBranches === true) {
+                  setShowBranches(false);
+                  setShowPrograms(true);
+                }
+              }}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 448 512"
+                width={24}
+                height={24}
+              >
+                {/*!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.*/}
+                <path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z" />
+              </svg>
+            </div>
+          )}
+          <div
+            className="border-black border-2 w-fit rounded-full ml-auto mb-2 cursor-pointer"
+            onClick={toggleMenu}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 384 512"
+              width={24}
+              height={24}
+            >
+              {/*!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.*/}
+              <path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z" />
+            </svg>
+          </div>
+        </div>
+        <div className="space-y-4">
+          {showPrograms && (
+            <>
+              <div
+                onClick={() => {
+                  selectCurrrentProgram(0);
+                  setShowPrograms(false);
+                  setShowBranches(true);
+                }}
+                className={`flex  gap-2  items-center rounded-[10px] p-4 cursor-pointer 
+                "bg-[#F1FAFF]  border-[#FC921B]  border-l-[5px]  shadow-[rgba(0,0,0,0.1)_0px_4px_12px] "
+                  
+              `}
+              >
+                <img src={Place1}></img>
+                <p className="lg:text-[18px]   font-bold leading-6">
+                  INTERNSHIP PROGRAM
+                </p>
+              </div>
+              <div
+                onClick={() => {
+                  selectCurrrentProgram(1);
+                  setShowPrograms(false);
+                  setShowBranches(true);
+                }}
+                className={`flex  gap-2  items-center rounded-[10px] p-4 cursor-pointer 
+              "bg-[#F1FAFF]  border-[#FC921B]  border-l-[5px]  shadow-[rgba(0,0,0,0.1)_0px_4px_12px] "
+                
+            `}
+              >
+                <img src={Place2}></img>
+                <p className="lg:text-[18px]    font-bold leading-6">
+                  PLACEMENT PROVISION ROGRAM
+                </p>
+              </div>
+            </>
+          )}
+          {showBranches && (
+            <div className="space-y-4">
+              {branches[currentProgram].map((branch, index) => {
+                return (
+                  <div
+                    onClick={() => {
+                      setShowBranches(false);
+                      setShowCourses(true);
+                      selectCurrrentBranch(index);
+                    }}
+                    className={`flex  justify-between gap-2  items-center rounded-[10px] p-4 cursor-pointer 
+                  "bg-[#F1FAFF]  border-[#FC921B]  border-l-[5px]  shadow-[rgba(0,0,0,0.1)_0px_4px_12px] "
+                    
+                `}
+                  >
+                    <p className="lg:text-[18px]  font-[700]">{branch}</p>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 320 512"
+                      height={16}
+                      width={16}
+                    >
+                      {/*!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.*/}
+                      <path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z" />
+                    </svg>
+                  </div>
+                );
+              })}
+            </div>
+          )}
+          {showCourses && (
+            <div className="space-y-4">
+              {courses[currentProgram][currentBranch].map((course, index) => {
+                return (
+                  <a
+                    onClick={toggleMenu}
+                    href="/register"
+                    className={`flex  justify-between gap-2  items-center rounded-[10px] p-4 cursor-pointer 
+                  "bg-[#F1FAFF]  border-[#FC921B]  border-l-[5px]  shadow-[rgba(0,0,0,0.1)_0px_4px_12px] "
+                    
+                `}
+                  >
+                    <p className="lg:text-[18px] font-bold ">{course}</p>
+                  </a>
+                );
+              })}
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* nav bar  */}
       <div className="container flex items-center justify-between gap-3">
         {/* <Logo></Logo> */}
 
@@ -47,16 +253,27 @@ const NavBar = () => {
             </li>
           </a>
         </ul>
-
-        <div class="flex gap-4">
-          <a href="/register">
+        <div className="flex gap-2">
+          <div class=" lg:hidden flex gap-4 ">
             <button
+              onClick={toggleMenu}
               type="button"
               class="inline-flex items-center whitespace-nowrap select-none justify-center font-medium gap-2 duration-200 ring-offset-background transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none rounded-lg disabled:opacity-50 disabled:grayscale  text-white text-primary-foreground hover:bg-opacity-60 text-sm md:text-md px-2 md:px-7 py-2 md:py-4 bg-[#252362] !rounded-full"
             >
-              Join Now
+              Programs
             </button>
-          </a>
+          </div>
+
+          <div class="flex gap-4">
+            <a href="/register">
+              <button
+                type="button"
+                class="inline-flex items-center whitespace-nowrap select-none justify-center font-medium gap-2 duration-200 ring-offset-background transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none rounded-lg disabled:opacity-50 disabled:grayscale  text-white text-primary-foreground hover:bg-opacity-60 text-sm md:text-md px-2 md:px-7 py-2 md:py-4 bg-[#fc921b] lg:bg-[#252362] !rounded-full"
+              >
+                Join Now
+              </button>
+            </a>
+          </div>
         </div>
       </div>
       {dispaly ? (
@@ -68,12 +285,6 @@ const NavBar = () => {
                 "left the dropdown set the dispaly and inside to false"
               );
           }}
-          // onMouseEnter={() => {
-          //   if (inside === false) {
-          //     setInside(true);
-          //   }
-          //   console.log("entered drop down inside is set to true");
-          // }}
         >
           <NavHoverBlock></NavHoverBlock>
         </div>
@@ -90,51 +301,6 @@ const NavHoverBlock = () => {
   const [currentProgram, selectCurrrentProgram] = useState(0);
   const [currentBranch, selectCurrrentBranch] = useState(0);
   const [currentCourse, selectCurrrentCourse] = useState(0);
-
-  const branches = [
-    ["CSE / IT", "ECE/ EEE ", "Mechanical", "Civil", "Management"],
-    ["Job Gurantee Programs", "Pro Degree"],
-  ];
-  const courses = [
-    [
-      [
-        "Machine Learning",
-        "Web Development",
-        "Artifical Inteligence",
-        "Cyber Security",
-        "Data Science",
-        "Azure Cloud Computing",
-        "Andriod Devlopment",
-        "Database Management Systems",
-      ],
-      ["Internet of Things", "Embedded Systems", "Robotics", "PLC"],
-      ["AutoCAD", "Hybrid & Electric Vehicle", "Car Design", "Ic Engine"],
-      ["AutoCAD", "Construction Planning & Construction"],
-      [
-        "Digital Marketing",
-        "Finance",
-        "Human Resources",
-        "Marketing",
-        "Stock market & CryptoCurrency",
-      ],
-    ],
-    [
-      [
-        "Full-Stack Web Devlopment",
-        "Marketing & Digital Marketing",
-        "Human Resources",
-        "Flutter",
-      ],
-      [
-        "Marketing & Digital Marketing",
-        "Human Resources",
-        "Data Science",
-        "Machine Learning",
-        "Flutter",
-        "Full-Stack Web Devlopment",
-      ],
-    ],
-  ];
 
   return (
     <div className=" container flex lg:gap-16 xl:gap-24 bg-[#faf8f5] navCss  px-16 py-8 rounded-[30px] mt-[10px] mx-auto lg:!w-[80%] xl:!w-[60%] !max-h-[500px] shadow-[rgba(100,100,111,0.2)_0px_7px_29px_0px]">

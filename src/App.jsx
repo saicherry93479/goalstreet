@@ -13,6 +13,7 @@ import ContactUsPage from "./Pages/ContactUsPage";
 import RegisterSample from "./Components/RegisterSample";
 import HRRegister from "./Pages/HRRegister";
 import CollegeForm from "./Pages/CollegeForm";
+import TermsPolicy from "./Pages/TermsPolicy";
 
 export default function App() {
   return (
@@ -39,18 +40,14 @@ export default function App() {
             path="/internships"
             element={<IntershipPage></IntershipPage>}
           ></Route>
-          <Route
-            path="/register"
-            element={<Register></Register>}
-          ></Route>
+          <Route path="/register" element={<Register></Register>}></Route>
           <Route path="/aboutus" element={<AboutusPage></AboutusPage>}></Route>
+          <Route path="/hrForm" element={<HRRegister></HRRegister>}></Route>
+          <Route path="/terms" element={<TermsPolicy></TermsPolicy>}></Route>
           <Route
-            path="/hrForm"
-            element={<HRRegister></HRRegister>}
+            path="/collegeForm"
+            element={<CollegeForm></CollegeForm>}
           ></Route>
-          <Route path="/collegeForm" element={<CollegeForm></CollegeForm>}>
-
-          </Route>
 
           <Route path="/*" element={<NotFound></NotFound>}></Route>
         </Routes>

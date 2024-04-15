@@ -167,3 +167,10 @@ html {
   
   background: -webkit-linear-gradient(135deg, hsla(32, 97%, 55%, 1) 0%, hsla(31, 45%, 89%, 1) 65%, hsla(0, 0%, 100%, 1) 100%);
 }
+.terms >h2{
+margin-top: 10px;
+margin-bottom: 10px;
+}
+.terms >p{
+  font-weight: 500;
+}

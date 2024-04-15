@@ -6,7 +6,7 @@ const HRRegister = () => {
   const [name, setName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [email, setEmail] = useState("");
-
+  const [accepted,setAccepted]=useState(false);
   const [companyName, setCompayName] = useState("");
 
   const [companySize, setCompanySize] = useState(1);
@@ -29,8 +29,7 @@ const HRRegister = () => {
       "-",
       companySize,
       "-",
-      industry,
-     
+      industry
     );
     if (
       !name ||
@@ -38,14 +37,18 @@ const HRRegister = () => {
       !companyName ||
       !email ||
       !industry ||
-      !companySize 
-   
+      !companySize
     ) {
       setModalText("Please Enter all the fields Required!");
       setShowModal(true);
       setError(true);
 
       return;
+    }
+    if(accepted===false){
+      setModalText("Please accept Terms and Conditions!");
+      setShowModal(true);
+      setError(true);
     }
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (emailRegex.test(email) === false) {
@@ -61,7 +64,7 @@ const HRRegister = () => {
       setError(true);
       return;
     }
-   
+
     try {
       const requestBody = {
         hrName: name,
@@ -69,8 +72,7 @@ const HRRegister = () => {
         hrNumber: phoneNumber,
         company: companyName,
         industry: industry,
-        companySize: companySize
-    
+        companySize: companySize,
       }; // Your request body here
 
       const response = await fetch(
@@ -80,15 +82,14 @@ const HRRegister = () => {
           headers: {
             "Content-Type": "application/json",
             "Access-Control-Allow-Credentials": "true",
-            "Access-Control-Allow-Origin":
-            "http://localhost:3000",
+            "Access-Control-Allow-Origin": "http://localhost:3000",
           },
           body: JSON.stringify(requestBody),
         }
       );
       console.log("response from server ", response);
       if (!response.ok) {
-        console.log("response is ",response)
+        console.log("response is ", response);
         throw new Error("Network response was not ok");
       }
       const responseData = await response.json();
@@ -102,12 +103,12 @@ const HRRegister = () => {
         setModalText("Succesfull Registered!");
         setShowModal(true);
         setError(false);
-        setCompanySize("")
-        setCompayName("")
-        setName("")
-        setEmail("")
-        setIndustry("")
-        setPhoneNumber("")
+        setCompanySize("");
+        setCompayName("");
+        setName("");
+        setEmail("");
+        setIndustry("");
+        setPhoneNumber("");
         return;
       }
     } catch (err) {
@@ -268,6 +269,28 @@ const HRRegister = () => {
                     onChange={(e) => setCompanySize(e.target.value)}
                   />
                   <p className="text-red-600 astro-QYQQ6LVS font-outfit" />
+                </div>
+                <div class="flex items-start mb-5">
+                  <div class="flex items-center h-5">
+                    <input
+                      id="remember"
+                      type="checkbox"
+                      value={accepted}
+                      class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800"
+                      required
+                      onChange={(e)=>{
+                        setAccepted(!accepted)
+                        console.log('accepted is ',accepted)
+                      
+                      }}
+                    />
+                  </div>
+                  <label
+                    for="remember"
+                    class="ms-2 text-sm font-medium text-black "
+                  >
+                    Agree to <a href="/terms" className="text-blue-600 underline">terms and conditions</a>
+                  </label>
                 </div>
 
                 <button

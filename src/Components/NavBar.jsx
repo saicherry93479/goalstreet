@@ -271,7 +271,7 @@ const NavBar = () => {
                 type="button"
                 class="inline-flex items-center whitespace-nowrap select-none justify-center font-medium gap-2 duration-200 ring-offset-background transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none rounded-lg disabled:opacity-50 disabled:grayscale  text-white text-primary-foreground hover:bg-opacity-60 text-[12px] md:text-md px-2 md:px-7 py-2 md:py-4 bg-[#fc921b] lg:bg-[#252362] !rounded-full"
               >
-                Join Now
+                Apply Jobs ( Beta )
               </button>
             </a>
           </div>
@@ -281,7 +281,7 @@ const NavBar = () => {
                 type="button"
                 class="inline-flex items-center whitespace-nowrap select-none justify-center font-medium gap-2 duration-200 ring-offset-background transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none rounded-lg disabled:opacity-50 disabled:grayscale  text-white text-primary-foreground hover:bg-opacity-60 text-sm md:text-md px-2 md:px-7 py-2 md:py-4 bg-[#252362]  !rounded-full"
               >
-                Hire from Us
+                Post a Job
               </button>
             </a>
           </div>

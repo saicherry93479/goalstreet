@@ -45,7 +45,7 @@ export default function App() {
           <Route path="/aboutus" element={<AboutusPage></AboutusPage>}></Route>
           <Route path="/hrForm" element={<HRRegister></HRRegister>}></Route>
           <Route path="/terms" element={<TermsPolicy></TermsPolicy>}></Route>
-          <Route path="/events" element={<Events></Events>}></Route>
+          <Route path="/companies" element={<Events></Events>}></Route>
           <Route
             path="/collegeForm"
             element={<CollegeForm></CollegeForm>}

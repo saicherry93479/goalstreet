@@ -174,3 +174,29 @@ margin-bottom: 10px;
 .terms >p{
   font-weight: 500;
 }
+.pastEventPageInactiveButton {
+  min-width: fit-content;
+  border-radius: 9999px;
+  border-width: 2px;
+  border-color: white;
+  padding: .5rem 1rem;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(.4,0,.2,1);
+  transition-duration: .15s;
+}
+
+.pastEventPageActiveButton {
+  min-width: fit-content;
+  border-radius: 9999px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(89 66 233 / var(--tw-bg-opacity));
+  padding: .5rem 1rem;
+  color: white;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(.4,0,.2,1);
+  transition-duration: .15s;
+}

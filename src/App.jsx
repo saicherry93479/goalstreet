@@ -14,6 +14,7 @@ import RegisterSample from "./Components/RegisterSample";
 import HRRegister from "./Pages/HRRegister";
 import CollegeForm from "./Pages/CollegeForm";
 import TermsPolicy from "./Pages/TermsPolicy";
+import Events from "./Pages/Events";
 
 export default function App() {
   return (
@@ -44,6 +45,7 @@ export default function App() {
           <Route path="/aboutus" element={<AboutusPage></AboutusPage>}></Route>
           <Route path="/hrForm" element={<HRRegister></HRRegister>}></Route>
           <Route path="/terms" element={<TermsPolicy></TermsPolicy>}></Route>
+          <Route path="/companies" element={<Events></Events>}></Route>
           <Route
             path="/collegeForm"
             element={<CollegeForm></CollegeForm>}

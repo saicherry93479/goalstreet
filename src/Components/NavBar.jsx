@@ -247,6 +247,11 @@ const NavBar = () => {
               About Us
             </li>
           </a>
+          <a href="/companies">
+            <li className="cursor-pointer select-none whitespace-nowrap rounded-full p-3 font-semibold transition duration-300 hover:text-[#252362]">
+              Companies
+            </li>
+          </a>
           <a href="/contactus">
             <li className="cursor-pointer select-none whitespace-nowrap rounded-full p-3 font-semibold transition duration-300 hover:text-[#252362]">
               Contact Us

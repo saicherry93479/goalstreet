@@ -55,12 +55,7 @@ const EventItems = () => {
         <div className="grid grid-cols-2 px-4  md:grid-cols-3 lg:grid-cols-4 gap-6 mx-auto mt-6 md:max-w-5xl">
           {eventsData[current]["companies"].map((d, i) => {
             return (
-              <div className="w-[350px] rounded overflow-hidden text-left shadow-sm transition-shadow">
-                {/* <img
-                  src="https://i.ytimg.com/vi/SSo_EIwHSd4/maxresdefault.jpg"
-                  className="object-cover brightness-90 h-[200px] aspect-video"
-                  alt="How does blockchain work? | Blockchain systems rely on a peer-to-peer network of computers"
-                /> */}
+          
                 <div
                   className='cursor-pointer'
                   
@@ -69,7 +64,7 @@ const EventItems = () => {
 
                 </div>
             
-              </div>
+   
             );
           })}
         </div>

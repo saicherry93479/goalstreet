@@ -30,7 +30,7 @@ const EventItems = () => {
     <section className="bg-[#121212] py-12">
       <div className="w-screen   md:w-50% ">
         <h2 className=" text-[28px] md:text-[40px] text-center text-white ">
-          If you missed something, access it right here
+          Directly Connect With Companies
         </h2>
 
         {/* <div className="flex mx-auto  no-wrap md:flex-wrap gap-4 justify-center p-4 max-w-screen   md:max-w-3xl overflow-x-scroll no-scrollbar">

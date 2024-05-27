@@ -60,7 +60,7 @@ const EventItems = () => {
                   className='cursor-pointer'
                   
                 >
-                    <a href={d.url} target="_blank" className="underline text-blue-400 text-[20px] text-white">{d.name}</a>
+                    <a href={d.url} target="_blank" className="underline !text-blue-400 text-[20px] text-white">{d.name}</a>
 
                 </div>
             
